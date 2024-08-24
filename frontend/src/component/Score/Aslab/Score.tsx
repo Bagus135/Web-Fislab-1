@@ -78,7 +78,7 @@ const Score = () => {
 
 const CollapseJudul = ({children , noJudul, } : {children? : ReactNode, noJudul:number}) =>{
   return(
-    <div tabIndex={0} className="collapse collapse-arrow border-2 border-black bg-base-300  mt-5 ">
+    <div tabIndex={0} className="collapse collapse-arrow border-2 border-black  mt-5 shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500">
     <input type="checkbox" />
     <div className="collapse-title text-xl font-medium">
       <p>{JudulPraktikum(noJudul-1)}</p>
@@ -93,7 +93,7 @@ const CollapseJudul = ({children , noJudul, } : {children? : ReactNode, noJudul:
 
 const CollapseKelompok = ({children , noKelompok } : {children? : ReactNode, noKelompok:number}) =>{
   return(
-    <div tabIndex={0} className="collapse collapse-arrow bg-base-300 border-2 border-black mt-2 ">
+    <div tabIndex={0} className="collapse collapse-arrow bg-base-200 border-2 border-black mt-2  ">
     <input type="checkbox" className="h-0" />
     <div className="collapse-title text-xl font-medium flex flex-col gap-2">{`Kelompok ${noKelompok}`}</div>
     <div className=" collapse-content bg-white p-2">
