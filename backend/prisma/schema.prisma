@@ -1,0 +1,341 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DIRECT_URL")
+}
+
+model User {
+  id String @id @default(cuid())
+  nrp String @unique 
+  fullname String
+  nickname String?
+  description String?
+  title Int[]
+  password String
+  gender Gender
+  role Int @default(1)
+  contact String?
+  ig String?
+  github String?
+  profilPic String?
+  email String?
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+
+}
+
+enum Gender{
+  male
+  female
+}
+
+model Kelompok{
+  userId String @unique
+  nomorKel Int
+  nrp String
+  fullname String
+}
+
+model Nilai {
+  userID String @unique
+  kelompokid Int
+
+  praktikum1 Praktikum1?
+  praktikum2 Praktikum2?
+  praktikum3 Praktikum3?
+  praktikum4 Praktikum4?
+  praktikum5 Praktikum5?
+  praktikum6 Praktikum6?
+  praktikum7 Praktikum7?
+  praktikum8 Praktikum8?
+  praktikum9 Praktikum9?
+  praktikum10 Praktikum10?
+}
+
+model Praktikum1{
+  userId String @unique
+  kelompokId Int
+  aslabId String
+  aslab String
+  name String
+  noJudul Int @default(1)
+  nrp String
+  PreLab Int?
+  InLab Int?
+  Abstrak Int?
+  Pendahuluan Int?
+  Metodologi Int?
+  Pembahasan Int?
+  Kesimpulan Int?
+  Format Int? 
+  nilaiTotal Int?
+  comment String?
+
+  praktikum Nilai @relation(fields: [userId], references: [userID])
+}
+
+model Praktikum2{
+   userId String @unique
+  kelompokId Int
+  aslabId String
+  aslab String
+  name String
+  noJudul Int @default(2)
+  nrp String
+  PreLab Int?
+  InLab Int?
+  Abstrak Int?
+  Pendahuluan Int?
+  Metodologi Int?
+  Pembahasan Int?
+  Kesimpulan Int?
+  Format Int? 
+  nilaiTotal Int?
+  comment String?
+
+  praktikum Nilai @relation(fields: [userId], references: [userID])
+}
+
+model Praktikum3{
+   userId String @unique
+  kelompokId Int
+  aslabId String
+  aslab String
+  name String
+  noJudul Int @default(3)
+  nrp String
+  PreLab Int?
+  InLab Int?
+  Abstrak Int?
+  Pendahuluan Int?
+  Metodologi Int?
+  Pembahasan Int?
+  Kesimpulan Int?
+  Format Int? 
+  nilaiTotal Int?
+  comment String?
+  
+  praktikum Nilai @relation(fields: [userId], references: [userID])
+}
+
+model Praktikum4{
+   userId String @unique
+  kelompokId Int
+  aslabId String
+  aslab String
+  name String
+  noJudul Int @default(4)
+  nrp String
+  PreLab Int?
+  InLab Int?
+  Abstrak Int?
+  Pendahuluan Int?
+  Metodologi Int?
+  Pembahasan Int?
+  Kesimpulan Int?
+  Format Int? 
+  nilaiTotal Int?
+  comment String?
+
+  praktikum Nilai @relation(fields: [userId], references: [userID])
+}
+
+model Praktikum5{
+  userId String @unique
+  kelompokId Int
+  aslabId String
+  aslab String
+  name String
+  noJudul Int @default(5)
+  nrp String
+  PreLab Int?
+  InLab Int?
+  Abstrak Int?
+  Pendahuluan Int?
+  Metodologi Int?
+  Pembahasan Int?
+  Kesimpulan Int?
+  Format Int? 
+  nilaiTotal Int?
+  comment String?
+  
+  praktikum Nilai @relation(fields: [userId], references: [userID])
+}
+
+model Praktikum6{
+    userId String @unique
+  kelompokId Int
+  aslabId String
+  aslab String
+  name String
+  noJudul Int @default(6)
+  nrp String
+  PreLab Int?
+  InLab Int?
+  Abstrak Int?
+  Pendahuluan Int?
+  Metodologi Int?
+  Pembahasan Int?
+  Kesimpulan Int?
+  Format Int? 
+  nilaiTotal Int?
+  comment String?
+  
+  praktikum Nilai @relation(fields: [userId], references: [userID])
+}
+
+model Praktikum7{
+   userId String @unique
+  kelompokId Int
+  aslabId String
+  aslab String
+  name String
+  noJudul Int @default(7)
+  nrp String
+  PreLab Int?
+  InLab Int?
+  Abstrak Int?
+  Pendahuluan Int?
+  Metodologi Int?
+  Pembahasan Int?
+  Kesimpulan Int?
+  Format Int? 
+  nilaiTotal Int?
+  comment String?
+  
+  praktikum Nilai @relation(fields: [userId], references: [userID])
+}
+
+model Praktikum8{
+   userId String @unique
+  kelompokId Int
+  aslabId String
+  aslab String
+  name String
+  noJudul Int @default(8)
+  nrp String
+  PreLab Int?
+  InLab Int?
+  Abstrak Int?
+  Pendahuluan Int?
+  Metodologi Int?
+  Pembahasan Int?
+  Kesimpulan Int?
+  Format Int? 
+  nilaiTotal Int?
+  comment String?
+  
+  praktikum Nilai @relation(fields: [userId], references: [userID])
+}
+
+model Praktikum9{
+  userId String @unique
+  kelompokId Int
+  aslabId String
+  aslab String
+  name String
+  noJudul Int @default(9)
+  nrp String
+  PreLab Int?
+  InLab Int?
+  Abstrak Int?
+  Pendahuluan Int?
+  Metodologi Int?
+  Pembahasan Int?
+  Kesimpulan Int?
+  Format Int? 
+  nilaiTotal Int?
+  comment String?
+  
+  praktikum Nilai @relation(fields: [userId], references: [userID])
+}
+
+model Praktikum10{
+  userId String @unique
+  kelompokId Int
+  aslabId String
+  aslab String
+  name String
+  noJudul Int @default(10)
+  nrp String
+  PreLab Int?
+  InLab Int?
+  Abstrak Int?
+  Pendahuluan Int?
+  Metodologi Int?
+  Pembahasan Int?
+  Kesimpulan Int?
+  Format Int? 
+  nilaiTotal Int?
+  comment String?
+  
+  praktikum Nilai @relation(fields: [userId], references: [userID])
+}
+
+model JudulAslab{
+  id String @id @default(cuid())
+  idAslab String 
+  kodeJudul String
+  noJudul Int
+  judul String
+  Aslab String
+
+  WeekSchedule WeekSchedule[]
+}
+
+model WeekSchedule{
+  no Int @unique @default(autoincrement())
+  idJudulAslab String 
+  noJudul Int
+  week Int
+  kelompokId Int 
+  JudulAslab JudulAslab @relation(fields: [idJudulAslab] , references: [id])
+  
+  Schedule Jadwal?
+}
+
+model Jadwal{
+  no Int @unique
+  idJudulAslab String
+  noJudul Int
+  kelompokid Int 
+  date String?
+  hour String?
+
+  aslabIds WeekSchedule @relation(fields: [no], references: [no])
+}
+
+model Link{
+  id Int @id @default(autoincrement())
+  title String
+  description String
+  link String
+  shortLink String @unique
+  createdAt DateTime @default(now())
+  creatorId String 
+}
+model Info{
+  id Int @id @default(autoincrement())
+  title String
+  description String
+  judul String
+  createdAt DateTime @default(now())
+  creatorName String
+}
+
+model finalscore{
+    userId String @unique
+    totalscore Int? 
+    kelompokId  Int 
+    nrp String
+    name  String
+}

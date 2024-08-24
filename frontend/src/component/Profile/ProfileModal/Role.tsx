@@ -1,0 +1,46 @@
+import { useState } from "react"
+import toast from "react-hot-toast"
+import useChangeRole from "./useChangeRole"
+
+const RoleModal = ({profile , setTrigger, trigger, load} : { profile : ProfileTypes|null, setTrigger : (trigger:boolean) => void, trigger : boolean, load:boolean}) => {
+    const [role , setRole] = useState(-1)
+    const {changeRole,loading} = useChangeRole()
+    const handleChangeRole = async (id : string|undefined, role : number ) =>{
+        await changeRole(id, role);
+        setTrigger(!trigger)
+    }
+    return (
+      <dialog id="ModalRole" className="modal w-screen ">
+      <div className="modal-box">
+        { !load? profile?.role === 4 ? 
+        <div className="text-center">
+        <h3 className="font-bold text-lg">Cannot change role {profile.fullname}</h3>
+    </div>
+        : 
+        <>
+        <div className="text-center">
+            <h3 className="font-bold text-lg">{profile?.fullname} {`(${profile?.role})`}</h3>
+        </div>
+        <div className="flex flex-col justify-stretch items-center text-center">
+            <div className="font-normal"> Change role</div>
+            <select id="role" onChange={(e)=> setRole(Number(e.target.value))}>
+                <option value={-1}>-----</option>
+                <option value={1}>Praktikan</option>
+                <option value={2}>Aslab</option>
+                <option value={3}>Admin</option>
+            </select>
+            <button type="button" disabled={loading} onClick={() => role === -1 ? toast.error('Select Role'):handleChangeRole(profile?.id, role)} className="btn btn-success">OK</button>
+        </div>
+        </>
+        : 
+        null
+        }
+      </div>
+      <form method="dialog" className="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>  
+  )
+  }
+  
+  export default RoleModal
