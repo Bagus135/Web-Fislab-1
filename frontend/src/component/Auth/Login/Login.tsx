@@ -5,6 +5,8 @@ import useLogin from "./useLogin";
 
 function Login(){
     const {login, isLoading} = useLogin();
+    console.log(process.env.BACKEND);
+    
     
     const [input, setInput] = useState({
         nrp : "",
