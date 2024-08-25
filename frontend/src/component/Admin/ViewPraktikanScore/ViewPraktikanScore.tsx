@@ -21,8 +21,8 @@ const ViewPraktikanScore = () => {
         let nama = '';
         let nrp = '';
         let n : number|null= null
-        let nilaiRataRata : number|null = null
-        const a = [...Array(10)].map((_,idx2)=>{
+        let nilaiRataRata : number|null = null;
+        [...Array(10)].map((_,idx2)=>{
             const dataMap = val[`praktikum${idx2+1}`] as getViewPraktikumAdminRes
             if(!dataMap) return
             nama = dataMap.name
@@ -53,8 +53,8 @@ const ViewPraktikanScore = () => {
         let nama = '';
         let nrp = '';
         let n : number|null= null
-        let nilaiRataRata : number|null = null
-        const a = [...Array(10)].map((_,idx2)=>{
+        let nilaiRataRata : number|null = null;
+        [...Array(10)].map((_,idx2)=>{
             const dataMap = val[`praktikum${idx2+1}`] as getViewPraktikumAdminRes
             if(!dataMap) return
             nama = dataMap.name

@@ -6,9 +6,9 @@ const StatCard = () => {
     let NilaiTotal : number|null = null 
     let nNilai  = 0
     let rerataNilai : number|null = null
-    let kelompokId : number|null = null
+    let kelompokId : number|null = null;
 
-    const a = [...Array(10)].map((_, idx) => {
+    [...Array(10)].map((_, idx) => {
         
         if (!nilai || !nilai[`praktikum${idx+1}`]) return null; // Check if property exists
         
@@ -18,6 +18,7 @@ const StatCard = () => {
         if(!nilai[`praktikum${idx+1}`].nilaiTotal) return null
         NilaiTotal = NilaiTotal! + detailScorePraktikum.nilaiTotal!
         nNilai = nNilai + 1
+        return null
     })
 
     if(NilaiTotal) rerataNilai = NilaiTotal!/nNilai

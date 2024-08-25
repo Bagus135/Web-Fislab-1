@@ -14,7 +14,7 @@ const PraktikanScore = () => {
 
     if (isLoading) return <Loading/>
     
-    const dataMap = [...Array(10)].map((val, idx) => {
+    const dataMap = [...Array(10)].map((_, idx) => {
         
         if (!nilai || !nilai[`praktikum${idx+1}`]) return null; // Check if property exists
         
