@@ -11,6 +11,7 @@ import ScheduleRoutes from './route/schedule.route.js'
 import ScoreRoutes from './route/score.route.js'
 
 //Execute the express module
+const PORT = process.env.PORT || 5000
 const app = express()
 
 //Exceute the confic from envirovement variable
@@ -39,6 +40,6 @@ app.use('/', (req,res)=>{
     res.status(200).json({message :"Hallo Bang"})
 })
 
-app.listen(5000, ()=>{
+app.listen(PORT, ()=>{
     console.log("Server running on http://localhost:5000 :)")
 })
