@@ -5,13 +5,21 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node index.js",
-    "dev": "nodemon --watch src --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm src/index.ts"
+    "dev": "nodemon --watch src --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm src/index.ts",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "web",
     "fislab1"
   ],
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+],
   "author": "Bagus Mustaqim",
   "license": "ISC",
   "devDependencies": {
