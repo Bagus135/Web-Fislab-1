@@ -17,7 +17,7 @@ dotenv.config();
 // MiddleWare
 app.use(express.json({ limit: `500kb` }));
 app.use(cors({
-    origin: "https://fislab-1.vercel.app/",
+    origin: "https://fislab-1.vercel/",
     credentials: true
 }));
 app.use(cookieParser());
