@@ -7,6 +7,9 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "noImplicitAny": false,
+    "allowUnusedLabels": true,
+  
 
     /* Bundler mode */
     "moduleResolution": "bundler",

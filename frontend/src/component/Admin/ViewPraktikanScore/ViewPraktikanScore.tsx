@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { CloudUpload, Trash } from "lucide-react";
 import Loading from "../../Other/Loading";
 import ProfileModal from "../../Profile/ProfileModal/ProfileModal";
