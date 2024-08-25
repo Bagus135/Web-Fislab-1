@@ -131,9 +131,9 @@ export const ModalInputScore = ({detailScore, id, trigger, setTrigger}:{detailSc
   return (
   <dialog id={id} className="modal w-screen ">
     <div className="modal-box h-[75%]">
-      <h3 className="font-extrabold text-2xl text-center">Input Score</h3>
-        <p className="pt-4 text-center font-bold">{detailScore.name}</p>
-        <p className="pb-4 text-center">{detailScore.nrp}</p>
+        <h3 className="font-bold text-2xl pb-2 text-center">Input Score</h3>
+        <p className="pt-4 text-xl text-center font-semibold">{detailScore.name}</p>
+        <p className="pb-4 text-l text-center">{detailScore.nrp}</p>
     <div className="flex flex-col">
             <InputComponent title="Pre Lab" placeholder="0-30" type="number" 
                             value={value.PreLab} 

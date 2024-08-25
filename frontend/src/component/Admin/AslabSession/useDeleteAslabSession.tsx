@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import Axios from '../../../utils/axios';
 import toast from 'react-hot-toast';
 
 const useDeleteAslabSession = () => {
+    const [loadDelete, setLoadDelete] = useState(false)
     const deleteAslabSession = async ( id : string, no : number, noKel : number, noJudul:number, aslabId:string) => {
         try {
+            setLoadDelete(true)
             const res = await Axios.delete(`/api/admin/weekschedule/${id}/${no}`,{
                 data : {
                     noKel, noJudul, aslabId
@@ -15,9 +18,11 @@ const useDeleteAslabSession = () => {
             toast.success(res.data.message);
             } catch (error: any) {
                 toast.error(error.message)
-            } 
+            } finally{
+                setLoadDelete(false)
+            }
         }
-    return {deleteAslabSession}
+    return {deleteAslabSession, loadDelete}
 }
 
 export default useDeleteAslabSession

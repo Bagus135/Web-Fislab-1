@@ -6,11 +6,14 @@ import useAddGroupPraktikan from "./useAddGroup"
 import useGetAllGroupPraktikan from "./useGetGroup"
 import Loading from "../../Other/Loading"
 import toast from "react-hot-toast"
+import useDeletePraktikan from "./useDeletePraktikan"
+import { Trash } from "lucide-react"
 
 const PraktikanGroup = () => {
     const{authUser} = useAuthContext()
     const {users} = useGetUsers()
     const {addGroup,isLoading} = useAddGroupPraktikan();
+    const {deleteGroup,isLoading : LoadingDelete} = useDeletePraktikan();
     const {trigger,setTrigger,dataGroup,isLoading : LoadAllGroup,} = useGetAllGroupPraktikan();
     
     const [value, setValue] = useState({
@@ -31,10 +34,20 @@ const PraktikanGroup = () => {
     })
     const dataGroupMap = dataGroup.map((val, idx)=>{
         return (
-        <div className="flex flex-row text-center rounded shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300 border border-black w-full" key={idx}>
+        <div className=" p-3 flex flex-row text-center rounded shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300 border border-black w-full" key={idx}>
             <div className="w-[10%]">{val.nomorKel}</div>
-            <div className="w-[45%]">{val.nrp}</div>
-            <div className="w-[45%]">{val.fullname}</div>
+            <div className="w-[40%]">{val.nrp}</div>
+            <div className="w-[40%]">{val.fullname}</div>
+            { LoadingDelete? 
+                <div className="loading loading-dots"/>
+                :
+                <Trash 
+                onClick={ async ()=> {
+                    await deleteGroup(val.userId)
+                    setTrigger(!trigger)
+                }}   
+                className= " w-[10%] mx-5 text-red-500 font-bold rounded-md border-2 border-red-500 hover:scale-110 transition duration-500"/>
+            }
         </div>
         )
     })

@@ -16,7 +16,7 @@ const AslabModul = () => {
     const {Profile, getProfile, isLoading:LoadingProfile} =useGetProfile()
     const {addJudulAslab,isLoading} = useAddAslabModul();
     const {trigger,setTrigger,dataJudul,isLoading : LoadAllGroup,} = useGetAslabModul();
-    const {deleteJudulAslab} = useDeleteAslabModul()
+    const {deleteJudulAslab,loadDelete } = useDeleteAslabModul()
 
     const [value, setValue] = useState<any>({
         uid: null,
@@ -73,7 +73,11 @@ const AslabModul = () => {
                         {val.Aslab}
                 </div>
                 <div onClick={() => handleSubmitDelete(val.id)} className="w-[10%]">
-                    <Trash className=" text-red-500 font-bold rounded-md border-2 border-red-500 hover:scale-110 transition duration-500"/>
+                    { loadDelete ? 
+                        <div className="loading loading-dots"/>
+                            :  
+                        <Trash className=" text-red-500 font-bold rounded-md border-2 border-red-500 hover:scale-110 transition duration-500"/>
+                    }
                 </div>
         </div>
         )

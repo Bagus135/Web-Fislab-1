@@ -20,11 +20,11 @@ const AslabSchedule = () => {
           <p className="w-1/5">{val.kelompokId}</p>
           <p className="w-[30%] flex flex-col text-left">
             { !val.Schedule.date?
-                <span className="text-center">{`Not Scheduled`}</span>
+                <span className="text-center">Not Scheduled</span>
               :
               <>
-                <span className="">{`${val.Schedule?.date}`}</span>
-                <span className="font-normal">{`${val.Schedule?.hour}`}</span>
+                <span className="text-center">{`${val.Schedule?.date}`}</span>
+                <span className="font-normal text-center">{`${val.Schedule?.hour}`}</span>
               </>
             }
             </p>

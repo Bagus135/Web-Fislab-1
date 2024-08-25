@@ -1,4 +1,4 @@
-import { getViewScoreAdmin,addJudulAslab, getAllGroupPraktikan, getAllJudulAslab, getAllWeekSchedule, deleteWeekSchedule, addWeekSchedule, addPraktikanGroupMember, deleteJudulAslab, updateFinalScore, resetFinalScore, createInfo, getInfo, deleteInfo } from "../controller/admin.controller.js";
+import { getViewScoreAdmin,addJudulAslab, getAllGroupPraktikan, getAllJudulAslab, getAllWeekSchedule, deleteWeekSchedule, addWeekSchedule, addPraktikanGroupMember, deleteJudulAslab, updateFinalScore, resetFinalScore, createInfo, getInfo, deleteInfo, deletePraktikanGroupMember } from "../controller/admin.controller.js";
 import express from 'express';
 import tokenChecker from "../middleware/tokenChecker.js";
 import adminChecker from "../middleware/adminChecker.js";
@@ -12,6 +12,7 @@ AdminRoutes.delete("/allscore/reset", tokenChecker, adminChecker, resetFinalScor
 //Create Praktikan Kelompok
 AdminRoutes.post("/kelompok/praktikan/:uid", tokenChecker, adminChecker, addPraktikanGroupMember)
 AdminRoutes.get("/kelompok/praktikan", tokenChecker, adminChecker, getAllGroupPraktikan)
+AdminRoutes.delete("/kelompok/praktikan/:uid", tokenChecker, adminChecker, deletePraktikanGroupMember)
 
 //register judul aslab
 AdminRoutes.post("/judulaslab/:uid", tokenChecker, adminChecker, addJudulAslab);

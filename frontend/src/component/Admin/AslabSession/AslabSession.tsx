@@ -24,7 +24,7 @@ const AslabSession = () => {
   const { dataJudul,isLoading:loading} = useGetAslabModul();
   const {addAslabSession,isLoading : loadingAdd} = useAddAslabSession();
   const {trigger,setTrigger,SessionAslab,isLoading : LoadAll} = useGetAslabSession();
-  const {deleteAslabSession} = useDeleteAslabSession();
+  const {deleteAslabSession, loadDelete} = useDeleteAslabSession();
   const {Profile, getProfile, isLoading:LoadingProfile} =useGetProfile()
 
   const [value, setValue] = useState<inputvalue>({
@@ -74,7 +74,11 @@ const AslabSession = () => {
             {val.JudulAslab.Aslab}
           </div>
           <div onClick={() => handleSubmitDelete(val.idJudulAslab, val.no, val.kelompokId, val.JudulAslab.noJudul, val.JudulAslab.idAslab)} className="w-[10]">
-            <Trash className=" text-red-500 font-bold rounded-md border-2 border-red-500 hover:scale-110 transition duration-500"/>
+            { loadDelete?
+              <div className="loading loading-dots"/>
+              :
+              <Trash className=" text-red-500 font-bold rounded-md border-2 border-red-500 hover:scale-110 transition duration-500"/>
+            }
           </div>
       </div>
       )
