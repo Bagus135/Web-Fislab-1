@@ -16,7 +16,7 @@ const AllUsers = () => {
   
   const mapUsers = users?.map((val : AllUsers, idx : number)=>{
     return (
-      <div key={idx} className="flex flex-col justify-stretch bg-white rounded shadow-md">
+      <div key={idx} className="flex flex-col justify-stretch bg-white rounded shadow-md border border-black">
         {authUser?.role ===4 ?<div className="flex flex-row justify-end px-3"> 
             <Ellipsis className="z-50 hover:bg-slate-400" onClick={()=>{
             getProfile(val.id);

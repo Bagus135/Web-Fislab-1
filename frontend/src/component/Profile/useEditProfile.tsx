@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Axios from "../../utils/axios";
 import toast from "react-hot-toast";
+import { useAuthContext } from "../../context/AuthContext";
 
 const useEditProfile = (authUser : AuthUserTypes|null) => {
+    const{setAuthUser} = useAuthContext();
     const [isLoading, setIsLoading] = useState(false);
     const [ProfileUser, setProfileUser] = useState(authUser)
     const editProfile = async ( authUser:AuthUserTypes|null, payload:any) => {
@@ -23,6 +25,7 @@ const useEditProfile = (authUser : AuthUserTypes|null) => {
             })
             toast.success(res.data.message);
             setProfileUser(res.data.payload)
+            setAuthUser(res.data.payload)
             } catch (error: any) {
                 toast.error(error.message)
             } finally {

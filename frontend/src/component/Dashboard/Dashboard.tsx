@@ -1,6 +1,6 @@
 import { useAuthContext } from "../../context/AuthContext"
 import AdminMenuCard from "./adminMenuCard"
-import NextSchedule from "./NextSchedule"
+import InfoBoard from "./InfoBoard"
 import StatCard from "./StatCard"
 import TimeCard from "./timeCard"
 import TimeGreeting from "./timeGreeting"
@@ -14,26 +14,26 @@ const Dashboard = () => {
     {authUser?.role === 1 ? (
       <>
         <StatCard/>
-        <NextSchedule/>
+        <InfoBoard/>
       </> 
       ) : null}
 
     {authUser?.role === 2 ? (
       <>
-      <NextSchedule/>
+      <InfoBoard/>
       </>
     ) : null }
     
     {authUser?.role === 3? (
       <>
-        <NextSchedule/>
+        <InfoBoard/>
         <AdminMenuCard/>
       </>
     ): null}
 
     {authUser?.role === 4? (
       <>
-        <NextSchedule/>
+        <InfoBoard/>
         <AdminMenuCard/>
       </>
     ): null}

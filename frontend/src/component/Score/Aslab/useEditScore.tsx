@@ -18,8 +18,6 @@ const useEditScore = () => {
     const[isLoading, setIsLoading] = useState<boolean>(false);
 
     const editScore = async (praktikan : aslabScoringDetails, input : InputScore, nilaiTotal : number) =>{
-        console.log(input, nilaiTotal, praktikan);
-        
         try {
             setIsLoading(true)
             const res =  await Axios.put(`/api/score/aslab/${praktikan.userId}/${praktikan.kelompokId}`, {

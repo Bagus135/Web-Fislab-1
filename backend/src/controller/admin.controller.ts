@@ -420,3 +420,70 @@ export const updateFinalScore = async(req : Request, res:Response) =>{
         res.status(500).json({error : "Internal Server Error"})
     }
 }
+
+export const resetFinalScore = async (req:Request, res: Response)=>{
+    try {
+        const reset = await prisma.finalscore.deleteMany();
+        if(!reset) return res.status(409).json({error : `Cannot reset the data`})
+        res.status(200).json({message : `Data succesfully deleted`})
+    } catch (error:any) {
+        console.log("error in reset final score", error.message);
+        res.status(500).json({error : "Internal Server Error"})
+    }
+}
+
+export const createInfo = async (req:Request, res: Response)=>{
+    try {
+        const {uid} = req.params
+        const {title, category, desc, name} = req.body
+        if(!title||!category||!desc||!name) return res.status(422).json(`Data cannot be emmpty`)
+        const data = await prisma.info.create({
+            data : {
+                title : title,
+                description : desc,
+                judul : category ,
+                creatorName : name
+            }
+        });
+        if(!data) return res.status(409).json({error : `Cannot Create Data`})
+        
+        res.status(200).json({message : `Data succesfully created`})
+    } catch (error:any) {
+        console.log("error in create Info admin", error.message);
+        res.status(500).json({error : "Internal Server Error"})
+    }
+}
+
+export const deleteInfo = async (req:Request, res: Response)=>{
+    try {
+        const {id} = req.params
+        const data = await prisma.info.delete({
+            where : {
+                id : Number(id)
+            }
+        });
+        if(!data) return res.status(409).json({error : `Cannot delete Data`})
+        
+        res.status(200).json({message : `Data succesfully deleted`})
+    } catch (error:any) {
+        console.log("error in delete Info admin", error.message);
+        res.status(500).json({error : "Internal Server Error"})
+    }
+}
+
+export const getInfo = async (req:Request, res: Response)=>{
+    try {
+        const data = await prisma.info.findMany({
+            orderBy : {
+                createdAt : "desc"
+            }
+        });
+        if(!data) return res.status(409).json({error : `Cannot get Data`})
+        res.status(200).json({payload : data})
+    } catch (error:any) {
+        console.log("error in get Info admin", error.message);
+        res.status(500).json({error : "Internal Server Error"})
+    }
+}
+
+

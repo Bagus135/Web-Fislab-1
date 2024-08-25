@@ -41,6 +41,7 @@ export const ModalEditProfile =({authUser, editProfile,loading}:ModalEditProfile
     }
 
     const handleSubmit = async() =>{
+        if(!value.description||!value.nickname||!value.profilPic) return toast.error(`Please fill all input`)
         await editProfile(authUser, value);
         (document.getElementById(`ModalEditProfile`) as HTMLDialogElement).close()
     }
@@ -51,12 +52,11 @@ export const ModalEditProfile =({authUser, editProfile,loading}:ModalEditProfile
         <div className="flex flex-col gap-2">
             <div className="text-center font-bold text-2xl pb-5"> Edit Profile</div>
             <div className="pb-2">
-                <label className="block mb-2 text-sm font-medium text-[#111827]">Profile Picture</label>
+                <label className="block mb-2 text-sm font-medium text-[#111827]">{`Profile Picture (max 500kb)`}</label>
             {!value.profilPic ? null :<img className='mb-5' src={value.profilPic}/>}
                 <div className="relative text-gray-400">
                     <input type='file'
                             accept="image/*"
-                            placeholder="Maximum 1mb"
                             className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[100%] p-2.5 rounded-l-lg py-3 px-4" 
                             onChange={(e)=> convertFile(e.target.files)}/>
                 </div>
@@ -96,6 +96,7 @@ export const ModalEditContact = ({authUser, editProfile,loading}:ModalEditProfil
     })
 
     const handleSubmit = async() =>{
+        if(!value.contact||!value.ig) return toast.error(`Please Fill All Data`)
         await editProfile(authUser, value);
         (document.getElementById(`ModalEditContact`) as HTMLDialogElement).close()
     }

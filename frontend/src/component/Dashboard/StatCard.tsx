@@ -1,4 +1,3 @@
-import getWeek from "../../utils/getWeekStudy"
 import useGetNilai from "../Score/Praktikan/useGetNilai";
 
 const StatCard = () => {

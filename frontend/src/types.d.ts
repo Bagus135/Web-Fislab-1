@@ -246,3 +246,12 @@ interface getViewScoreAdmin{
     praktikum9 : getViewPraktikumAdminRes;
     praktikum10 : getViewPraktikumAdminRes;
 }
+
+interface AnnounceTypeRes {
+    id: number;
+    title: string;
+    description: string;
+    judul: string;
+    createdAt: Date;
+    creatorName: string;
+}

@@ -19,6 +19,7 @@ import CheckSchedulePage from "./component/Schedule/Aslab/checkSchedule/checkSch
 import ShortlinkPage from "./component/ShortLink/ShortlinkPage";
 import Profile from "./component/Profile/Profile";
 import ViewPraktikanScore from "./component/Admin/ViewPraktikanScore/ViewPraktikanScore";
+import Announcement from "./component/Announcement/Announcement";
 
 
 
@@ -36,6 +37,7 @@ function App(){
         <Route path="/login" element = { !authUser? <Login/> : <Navigate to={'/dashboard'}/>} />
         <Route path="/dashboard" element = { authUser? <Dashboard/> : <Navigate to={'/login'}/>} />
         <Route path="/signup" element = { !authUser? <Navigate to={'/login'}/> : (authUser.role > 2 ? <SignUp/> : <NotAuth pageName="Sign Up"/> ) } />
+        <Route path="/announcement" element = { !authUser? <Navigate to={'/login'}/> : <Announcement/>} />
         <Route path="/score" element = { !authUser? <Navigate to={'/login'}/> : <ScorePage/> } />
         <Route path="/schedule" element = { !authUser? <Navigate to={'/login'}/> : <Schedule/> } />
         <Route path="/schedule/check-all" element = { !authUser? <Navigate to={'/login'}/> : <CheckSchedulePage/> } />

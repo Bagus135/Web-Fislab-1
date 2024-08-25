@@ -107,7 +107,6 @@ export const ModalInputScore = ({detailScore, id, trigger, setTrigger}:{detailSc
     )
     const handleSubmit = async (e : React.FormEvent) => {
         e.preventDefault();
-        console.log(value);
         
         if(!value.PreLab||!value.InLab||!value.Abstrak||!value.Pendahuluan||!value.Metodologi||!value.Pembahasan||!value.Kesimpulan||!value.Format)
             return toast.error(`Please fill all fields`)

@@ -17,7 +17,7 @@ const app = express()
 dotenv.config();
 
 // MiddleWare
-app.use(express.json({limit:`1mb`}))
+app.use(express.json({limit:`500kb`}))
 app.use(cors({
     origin : 'http://localhost:5173',
     credentials : true
