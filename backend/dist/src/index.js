@@ -20,7 +20,6 @@ app.use(cors({
     origin: "https://fislab-1.vercel.app",
     credentials: true
 }));
-app.use(cookieParser());
 // Route Link
 app.use("/api/auth", AuthRoutes);
 app.use("/api/admin", AdminRoutes);
