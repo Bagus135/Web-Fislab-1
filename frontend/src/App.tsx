@@ -20,10 +20,11 @@ import ShortlinkPage from "./component/ShortLink/ShortlinkPage";
 import Profile from "./component/Profile/Profile";
 import ViewPraktikanScore from "./component/Admin/ViewPraktikanScore/ViewPraktikanScore";
 import Announcement from "./component/Announcement/Announcement";
-
+import dotenv from 'dotenv'
 
 
 function App(){
+  dotenv.config();
   const {isLoading,authUser} = useAuthContext()
   const {isLoading: loadingShortlink, ShortLink} = useShortLinkContext()
   
