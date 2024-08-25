@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Axios =  axios.create({
-baseURL : 'https://web-fislab-1-back.vercel.app/',
+baseURL : import.meta.env.API_URL,
 withCredentials : true,
 })
 
