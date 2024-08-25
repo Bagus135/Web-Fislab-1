@@ -38,7 +38,7 @@ const ProfileUser = () =>{
               Profile
             </Link>
           </li>
-          {!isLoading?(<li onClick={logout}><a>Logout</a></li>) : (<li>loading<div className="loading loading-dots"/></li>)}
+          {!isLoading?(<li onClick={logout}><a>Logout</a></li>) : (<li><div className="loading loading-dots"/></li>)}
           
         </ul>
       </div>

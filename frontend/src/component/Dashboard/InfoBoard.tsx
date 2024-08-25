@@ -1,8 +1,12 @@
 import { Pin } from "lucide-react"
 import useGetAnnouncement from "../Announcement/useGetAnnouncement"
+import ModalDetail from "../Announcement/Modal/ModalDetail";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const InfoBoard = () => {
   const {Announcement} = useGetAnnouncement();
+  const [selectedList, setSelectedList] = useState<AnnounceTypeRes|null>(null)
   if(!Announcement) return(
     <div className="flex justify-stretch w-full">
     <div className="bg-white px-2 rounded shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300 mt-5 mx-5 mb-5 w-full border border-black pt-2 pb-6">
@@ -13,11 +17,14 @@ const InfoBoard = () => {
       </div>
   </div>
   )
+
   const AnnouncementMap = [...Array(3)].map((_,idx)=>{
     if (!Announcement[idx]) return null
     const data = Announcement[idx]
       return (
-        <div className="flex flex-row max-w-full max-h-40 overflow-hidden items-center pl-2">
+        <div className="flex flex-row max-w-full max-h-40 overflow-hidden items-center pl-2"  onClick={() => {
+          setSelectedList(data);
+          (document.getElementById('ModalDetailAnnouncement') as HTMLDialogElement).showModal()!}}>
 
         <img src="/toa.png" alt="Icon" className="w-[12%] max-w-14 flex items-center justify-center" />
        
@@ -31,20 +38,33 @@ const InfoBoard = () => {
       </div>
       ) 
   })
+
+
   return (
+    <>
+    <ModalDetail selectedList={selectedList!} />
 <div className="flex justify-stretch w-full">
     <div className="bg-white px-2 rounded shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300 mt-5 mx-5 mb-5 w-full border border-black pt-2 pb-6">
         <div className="text-center font-bold text-2xl px-2 pt-2 pb-6 w-full md:text-3xl">Pengumuman</div>
-          <div className="flex w-full flex-col gap-4">
+          <div className="flex w-full flex-col gap-6">
           {Announcement.length == 0 ? 
           <p className="text-center">Tidak Ada Pengumuman</p>
-            :
+          :
             AnnouncementMap
+          }
+          {
+            Announcement.length > 3 ? 
+              <Link to={'/announcement'} className=" text-center border hover:font-medium border-black rounded-md mt-3 mx-5 md:p-2  hover:border-gray-400 ">
+                Lihat Selengkapnya
+              </Link>
+            :
+            null 
           }
           
           </div>
     </div>
 </div>
+  </>
   )
 }
 

@@ -1,13 +1,15 @@
 import { Trash } from "lucide-react"
 import useDeleteAnnouncement from "../useDeleteAnnouncement"
 import { useAuthContext } from "../../../context/AuthContext"
+import { useLocation } from "react-router-dom"
 
 interface ModalDetailProps{
     selectedList : AnnounceTypeRes, 
-    trigger : boolean, 
-    setTrigger : (trigger:boolean)=> void}
+    trigger? : boolean, 
+    setTrigger? : (trigger:boolean)=> void}
 
 const ModalDetail = ({selectedList, trigger, setTrigger}: ModalDetailProps) => {
+    const currentLocation = useLocation()
     const {authUser} = useAuthContext()
     const {deleteAnnouncement,isLoading} = useDeleteAnnouncement()
     if(!selectedList){
@@ -23,8 +25,9 @@ const ModalDetail = ({selectedList, trigger, setTrigger}: ModalDetailProps) => {
             )}
 
     const handleDelete = async() =>{
+        if(!setTrigger) return
         await deleteAnnouncement(selectedList.id)
-        setTrigger(!trigger)
+        setTrigger(!trigger)!
     }
 
     return(
@@ -43,7 +46,7 @@ const ModalDetail = ({selectedList, trigger, setTrigger}: ModalDetailProps) => {
                 <p className="text-right pr-12 pb-10">Koor</p>
                 <p className="text-right">{selectedList.creatorName}</p>
             </div>
-        { (authUser?.role as number) > 2 ?
+        { (authUser?.role as number) > 2 && currentLocation.pathname == "/announcement" ?
             <button
             onClick={handleDelete}
             className={`mt-10 text-white bg-red-500 h-focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  w-[20%] flex justify-center hover:scale-90 transition duration-500 hover:bg-red-800 ${isLoading? "btn btn-disabled" : ''}`}

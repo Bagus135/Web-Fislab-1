@@ -28,9 +28,11 @@ const ShortLinkAdmin = ({authUser}:{authUser:AuthUserTypes}) => {
 
   return (
     <>
-    <button className="w-full flex justify-center mt-5 text-center text-[#FFFFFF] bg-gray-700 hover:bg-gray-900 text-2xl rounded-lg font-bold px-5 py-2.5 mb-6 " onClick={()=> setBtn(!btn)}>
-    <PlusSquare className="size-8"/>
-    </button>
+    <div className="flex flex-row justify-end pr-4">
+        <button className="w-[20%] flex justify-center mt-5 text-center text-[#FFFFFF] bg-gray-700 hover:bg-gray-900 text-2xl rounded-lg font-bold px-5 py-2.5 " onClick={()=> setBtn(!btn)}>
+         <PlusSquare className="size-8"/>
+        </button>
+    </div>
     <div className={`${ btn ? "flex flex-col justify-stretch items-center gap-3 p-2" : "hidden"}`}>
             <div className="rounded-md  w-full mt-3  ">
                 <label className="pl-2 block mb-2 text-sm font-medium text-[#111827]">Title</label>

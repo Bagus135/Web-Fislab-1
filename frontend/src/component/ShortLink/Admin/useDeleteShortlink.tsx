@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import Axios from '../../../utils/axios';
 import toast from 'react-hot-toast';
 
 
 const useDeleteShortlink = () => {
+    const [loading, setLoading] = useState(false)
     const deleteShortlink = async (data: getShortLink) => {
         try {
+            setLoading(true)
             const res = await Axios.delete(`/api/shortlink/${data.id}`,{
                 data :{
                     shortlink : data.shortLink,
@@ -18,10 +21,12 @@ const useDeleteShortlink = () => {
             location.reload();
         } catch (error: any) {
             toast.error(error.message)
-        } 
+        } finally{
+            setLoading(false)
+        }
     }   
 
-return { deleteShortlink }
+return { deleteShortlink, loading }
 }
 
 export default useDeleteShortlink

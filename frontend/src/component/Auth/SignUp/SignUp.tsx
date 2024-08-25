@@ -30,7 +30,7 @@ const SignUp = () => {
             <div>
                 <img src="/logofisika.png" width="50" alt="Logo"/>
             </div>
-             <h1 className="text-3xl font-bold text-[#4b5563] text-[#4B5563] my-auto">SIGN UP</h1>
+             <h1 className="text-3xl font-bold text-black my-auto">SIGN UP</h1>
         </div>
 
         <div className=" text-sm font-serif text-center text-[#6c7483] pb-8 mx-auto">Are you ready for Fisika Laboratorium I? </div>

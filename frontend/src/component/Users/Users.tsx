@@ -48,7 +48,7 @@ const AllUsers = () => {
 })
 
     return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-stretch items-stretch p-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-stretch items-stretch p-2 mt-2">
       <ProfileModal profile={Profile} loading={LoadingProfile}/>
       <RoleModal profile={Profile} setTrigger={setTrigger} trigger={trigger} load={LoadingProfile}/>
       {mapUsers}

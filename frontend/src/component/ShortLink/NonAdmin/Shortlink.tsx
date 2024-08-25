@@ -5,13 +5,13 @@ import useDeleteShortlink from "../Admin/useDeleteShortlink";
 
 const Shortlink = ({authUser}:{authUser :AuthUserTypes}) => {
   const {ShortLink,isLoading} = useShortLinkContext();
-  const {deleteShortlink} = useDeleteShortlink()
+  const {deleteShortlink, loading} = useDeleteShortlink()
   if(isLoading) return <Loading/>
   if(!ShortLink) return <div>Not Shortlink added</div>
     
   const shortLinkMap = ShortLink.map((val : getShortLink, idx:number)=>{
     return (
-        <div key={idx} className=" bg-white shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 rounded-lg hover:scale-95 transition duration-500  m-2" >
+        <div key={idx} className=" mt-4 bg-white shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 rounded-lg hover:scale-95 transition duration-500  m-2" >
             <div onClick={()=>{location.assign(`${location.origin}/${val.shortLink}`)}}
                 className="relative p-6">
                 <div className="flex items-center">
@@ -23,7 +23,11 @@ const Shortlink = ({authUser}:{authUser :AuthUserTypes}) => {
             </div>
             { authUser.role > 2  ?
             <div className="flex z-20 w-full justify-end items-center pr-2" >
-            <Trash2 className='z-20 size-6 text-red-500 font-bold rounded-md border-2 border-red-500 hover:scale-110 transition duration-500' onClick={()=>{deleteShortlink(val)}}/>
+                {loading? 
+                  <div className="loading loading-dots justify-end"/>
+                :
+                <Trash2 className='z-20 size-6 text-gray-700 font-bold rounded-md border-2 border-gray-700 hover:scale-110 transition duration-500 hover:border-black hover:text-black' onClick={()=>{deleteShortlink(val)}}/>
+              }
             </div>
             :
             null
@@ -33,9 +37,12 @@ const Shortlink = ({authUser}:{authUser :AuthUserTypes}) => {
 })
 
   return (
-<>
-{shortLinkMap}
-</>
+<div className="mt-5">
+{ ShortLink.length== 0?
+  <p className="text-center">Tidak Ada Link Yang Tersedia</p>
+  :
+  shortLinkMap}
+</div>
   )
 }
 
