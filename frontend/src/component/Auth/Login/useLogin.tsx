@@ -19,6 +19,7 @@ const useLogin = () =>{
             })
             setAuthUser(res.data.payload)
             toast.success(res.data.message)
+            console.log('Hai');
             
         } catch (error:any){
             toast.error(error.message);
