@@ -4,6 +4,6 @@ const generateToken = (userId, res) => {
     res.cookie('jwt', token, {
         maxAge: 1 * 24 * 60 * 60 * 1000,
     });
-    console.log(token);
+    return token;
 };
 export default generateToken;
