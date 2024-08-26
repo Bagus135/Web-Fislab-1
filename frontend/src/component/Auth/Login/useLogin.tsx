@@ -10,7 +10,7 @@ const useLogin = () =>{
     const login = async (nrp : string , password : string) =>{
         try {
             setIsLoading(true)
-            const res =  await Axios.post('/api/auth', {
+            const res =  await Axios.post('/api/auth/login', {
                 nrp : nrp,
                 password : password
             }).catch((err : AxiosErr)=>{
