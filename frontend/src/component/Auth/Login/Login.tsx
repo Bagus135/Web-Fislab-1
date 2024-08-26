@@ -4,6 +4,8 @@ import useLogin from "./useLogin";
 
 
 function Login(){
+    console.log(import.meta.env.VITE_BACKEND);
+    
     const {login, isLoading} = useLogin();
     const [input, setInput] = useState({
         nrp : "",
