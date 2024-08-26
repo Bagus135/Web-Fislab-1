@@ -7,6 +7,5 @@ const generateToken = (userId, res) => {
         secure : true,
         sameSite : 'none',
     });
-    return token;
 };
 export default generateToken;

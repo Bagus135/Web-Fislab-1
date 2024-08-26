@@ -3,7 +3,6 @@ import { useAuthContext } from "../../../context/AuthContext";
 import Axios from "../../../utils/axios";
 import toast from "react-hot-toast";
 
-
 const useLogin = () =>{
     const[isLoading, setIsLoading] = useState<boolean>(false);
     const{setAuthUser} = useAuthContext();
@@ -11,7 +10,7 @@ const useLogin = () =>{
     const login = async (nrp : string , password : string) =>{
         try {
             setIsLoading(true)
-            const res =  await Axios.post('/api/auth/login', {
+            const res =  await Axios.post('/api/auth', {
                 nrp : nrp,
                 password : password
             }).catch((err : AxiosErr)=>{

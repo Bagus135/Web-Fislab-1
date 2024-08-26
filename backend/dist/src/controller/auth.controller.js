@@ -60,7 +60,7 @@ export const login = async (req, res) => {
         if (!comparePass) {
             return res.status(403).json({ error: "Your password is incorrect!! :( " });
         }
-       const token =  generateToken(user?.id, res);
+        generateToken(user?.id, res);
         res.status(200).json({
             payload: {
                 id: user.id,
@@ -78,7 +78,6 @@ export const login = async (req, res) => {
                 github: user.github,
                 ig: user.ig,
                 title: user.title,
-                token : token
             },
             message: "Login Successfully"
         });
