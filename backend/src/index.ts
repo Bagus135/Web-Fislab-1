@@ -16,7 +16,6 @@ const app = express()
 
 //Exceute the confic from envirovement variable
 dotenv.config();
-
 // MiddleWare
 app.use(express.json({limit:`500kb`}))
 app.use(cors({
