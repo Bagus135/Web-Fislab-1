@@ -90,7 +90,7 @@ export const login = async (req, res) => {
 };
 export const logout = async (req, res) => {
     try {
-        res.cookie("jwt", "", { maxAge: 0 });
+        res.clearCookie('jwt');
         res.status(200).json({ message: "Logged Out Succesfully" });
     }
     catch (error) {
