@@ -7,6 +7,7 @@ const generateToken = (userId :string , res : Response) =>{
         maxAge : 1 * 24* 60 * 60 * 1000,
         httpOnly : true,
         secure : true,
+        sameSite : 'none',
     })
     
 }
