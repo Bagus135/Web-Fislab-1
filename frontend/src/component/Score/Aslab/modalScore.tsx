@@ -108,7 +108,7 @@ export const ModalInputScore = ({detailScore, id, trigger, setTrigger}:{detailSc
     const handleSubmit = async (e : React.FormEvent) => {
         e.preventDefault();
         
-        if(!value.PreLab||!value.InLab||!value.Abstrak||!value.Pendahuluan||!value.Metodologi||!value.Pembahasan||!value.Kesimpulan||!value.Format)
+        if(value.PreLab === undefined|| value.InLab === undefined || value.Abstrak === undefined || value.Pendahuluan ===  undefined|| value.Metodologi ===  undefined|| value.Pembahasan ===undefined|| value.Kesimpulan=== undefined|| value.Format === undefined)
             return toast.error(`Please fill all fields`)
         const newValue = ChangeTypeNumber(value);
 
@@ -214,7 +214,9 @@ const InputComponent = ({title, type, placeholder, value, setValue} : InputCompo
                     className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[90%] p-2.5 rounded-l-lg py-3 px-4" 
                     placeholder={placeholder}
                     value={value}
-                    onChange={setValue}/>
+                    onChange={setValue}
+                    onWheel={(e) => e.currentTarget.blur()}
+                    />
         </div>
     </div>
      )
