@@ -9,7 +9,7 @@ const useGetProfile = () => {
         const getProfile = async (id:string) => {
             try {
                 setIsLoading(true)
-                const res = await Axios.get(`/api/profile//user/${id}`).catch((err : AxiosErr)=>{
+                const res = await Axios.get(`/api/profile/user/${id}`).catch((err : AxiosErr)=>{
                     if(err.code === "ERR_NETWORK") throw new Error(err.message)
                     throw new Error(`${err.response.status} - ${err.response.statusText} \n ${err.response.data.error}`)
                 })
