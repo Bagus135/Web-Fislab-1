@@ -108,8 +108,10 @@ export const ModalInputScore = ({detailScore, id, trigger, setTrigger}:{detailSc
     const handleSubmit = async (e : React.FormEvent) => {
         e.preventDefault();
         
-        if(value.PreLab === undefined|| value.InLab === undefined || value.Abstrak === undefined || value.Pendahuluan ===  undefined|| value.Metodologi ===  undefined|| value.Pembahasan ===undefined|| value.Kesimpulan=== undefined|| value.Format === undefined)
-            return toast.error(`Please fill all fields`)
+        if(value.PreLab === undefined|| value.InLab === undefined || value.Abstrak === undefined || value.Pendahuluan ===  undefined|| value.Metodologi ===  undefined|| value.Pembahasan ===undefined|| value.Kesimpulan=== undefined|| value.Format === undefined){
+          return toast.error(`Please fill all fields`)
+        }
+
         const newValue = ChangeTypeNumber(value);
 
         if(0 > newValue.PreLab || newValue.PreLab > 30) return toast.error(`Nilai Prelab Berkisar 0-30`)

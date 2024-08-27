@@ -1,1 +1,1 @@
-console.log(!Number(1));
+console.log(Number(0)=== undefined);
