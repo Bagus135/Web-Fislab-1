@@ -53,7 +53,7 @@ export const editScore = async (req, res) => {
     try {
         const { uid: idPraktikan, idKel: kelompokId } = req.params;
         const { noJudul, PreLab, InLab, Abstrak, Pendahuluan, Metodologi, Pembahasan, Kesimpulan, Format, nilaiTotal, comment } = req.body;
-        if (!noJudul || !PreLab || !InLab || !Abstrak || !Pendahuluan || !Metodologi || !Pembahasan || !Kesimpulan || !Format || !nilaiTotal || !comment)
+        if (!noJudul)
             return res.status(422).json({ error: `Fill All Fields` });
         if (!idPraktikan || !noJudul) {
             return res.status(403).json({ error: "The request is invalid" });

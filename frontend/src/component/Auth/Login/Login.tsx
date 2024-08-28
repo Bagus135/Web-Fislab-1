@@ -16,11 +16,12 @@ function Login(){
     }
 
     return(
-<div className=" h-screen w-screen bg-neutral-50 mx-auto items-center p-4 justify-center flex ">
-    <div className="flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-white rounded-2xl shadow-xl">
+<div className=" w-screen mx-auto items-center p-4 justify-center flex flex-col">
+    <div className="flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 rounded-2xl shadow-xl">
         <div className="flex flex-col justify-center mx-auto items-center gap-3 pb-4">
-            <div>
-                <img src="/logofisika.png" width="50" alt="Logo"/>
+            <div className="flex flex-row gap-2">
+                <img src="/logofisika.png"  width="80" alt="Fisika ITS"/>
+                <img src="/betelgeuse.png" width="80" alt="Betelgeuse 22"/>
             </div>
              <h1 className="text-3xl font-bold text-black my-auto">LOGIN</h1>
         </div>
@@ -62,9 +63,17 @@ function Login(){
             </div>
             
             <button type="submit" 
-                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6 ${isLoading? "btn btn-disabled" : ''}`}
+                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-1 ${isLoading? "btn btn-disabled" : ''}`}
                     disabled = {isLoading}> {isLoading? <div className="loading loading-spinner"/> : "Login"}</button>
+
+            <div className="pb-2 flex flex-row">
+                <p>Forgot <a href='https://wa.me/+6282336658441?text=Permisi%20Mas%20Taqim%20yang%20baik%20hati%20dan%20tidak%20sombong.%20Saya%20lupa%20password%20saya%20mas.%20apakah%20mas%20bisa%20memberitahu%20password%20saya?🥰.%20Nama%20saya%20adalah....%20dengan%20nrp......' className=" font-semibold text-blue-900 hover:font-bold">Password?</a></p> 
+            </div>
         </form>
+    </div>
+    <div className="flex flex-col gap-2 pt-5">
+        <p className="">Supported By : </p>
+            <img src="/RudalCorp.png" width="100" alt="Betelgeuse 22"/>  
     </div>
 </div>
     )
