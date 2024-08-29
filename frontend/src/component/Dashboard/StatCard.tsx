@@ -25,7 +25,7 @@ const StatCard = () => {
 
   return (
     <div className='flex flex-row justify-stretch gap-5 p-5'>
-        <div className="flex items-center p-4 bg-white rounded shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300  w-full">
+        <div className="flex items-center  border p-4 bg-white rounded shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300  w-full dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]">
             {isLoading? 
             <>
             <div className="flex justify-center items-center w-full">
@@ -33,19 +33,21 @@ const StatCard = () => {
             </div>
             </>
             :
-            <div className="bg-gray-300 flex flex-shrink-0 items-center md:text-xl font-bold justify-center h-12 w-10 rounded">
+            <>
+            <div className="bg-gray-300 flex flex-shrink-0 items-center md:text-xl font-bold justify-center h-12 w-10 rounded dark:bg-[#ffa31a] dark:text-black">
                 {!kelompokId? '-' : kelompokId}
             </div>
-            }
             <div className="flex-grow flex flex-col ml-4 ">
-                <span className="text-sm md:text-xl font-bold top-0 pt-0">Kelompok</span>
+                <span className="text-sm md:text-xl font-bold top-0 pt-0 dark:text-[#ffa31a]">Kelompok</span>
                 <div className="flex items-center justify-between">
-                    <span className="text-gray-500 text-xs md:text-sm">Apakah kelompokmu hoki?</span>
+                    <span className="text-gray-500 text-xs md:text-sm dark:text-gray-300">Apakah kelompokmu hoki?</span>
                 </div>
             </div>
+            </>
+            }
         </div>
         
-        <div className="flex items-center p-4 bg-white rounded w-full shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300 ">
+        <div className="flex items-center p-4 bg-white rounded w-full shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300 border dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]">
             {isLoading? 
             <><div className="flex justify-center items-center w-full">
                 <div className="loading loading-dots size-5"/>
@@ -53,13 +55,13 @@ const StatCard = () => {
             </>
             :
             <>
-            <div className="bg-gray-300 flex flex-shrink-0 items-center  font-bold justify-center h-12 w-10 rounded md:text-xl">
+            <div className="bg-gray-300 flex flex-shrink-0 items-center  font-bold justify-center h-12 w-10 rounded md:text-xl dark:bg-[#ffa31a] dark:text-black">
                 {!rerataNilai?  '-' : rerataNilai }
             </div>
                 <div className="flex-grow flex flex-col ml-4 ">
-                    <span className="text-sm md:text-xl font-bold top-0 pt-0">Nilai Rerata</span>
+                    <span className="text-sm md:text-xl font-bold top-0 pt-0 dark:text-[#ffa31a]">Nilai Rerata</span>
                     <div className="flex items-center justify-between">
-                        <span className="text-gray-500 text-xs md:text-sm">Mainnya Hebat!!</span>
+                        <span className="text-gray-500 text-xs md:text-sm dark:text-gray-300">Mainnya Hebat!!</span>
                         <span className="text-green-500 text-sm font-semibold ml-2"></span>
                     </div>
                 </div>

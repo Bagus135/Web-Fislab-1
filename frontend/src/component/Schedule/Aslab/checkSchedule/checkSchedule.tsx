@@ -35,7 +35,7 @@ const CheckSchedule =()=>{
 
      const ScheduleFilterMap = allScheduled.map((val,idx)=>{
         return (
-            <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md text-black w-full h-10 items-center font-bold pr-3 text-center text-sm md:text-base py-7">
+            <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md text-black w-full h-10 items-center font-bold pr-3 text-center text-sm md:text-base py-7 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
             <p className="w-1/5">{val.aslabIds.week}</p>
             <p className="w-[30%]">{JudulPraktikum(val.aslabIds.noJudul)}</p>
             <p className="w-1/5">{val.kelompokid}</p>
@@ -53,7 +53,7 @@ const CheckSchedule =()=>{
                 <label className="pl-2 block mb-2 text-sm font-medium text-[#111827]">Tanggal</label>
                 <div className="relative text-gray-400">
                     <input type="date"
-                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4" 
+                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" 
                             placeholder="11/09/2024"
                             value={value.date}
                             onChange={(e)=> setValue({...value, date : e.target.value})}/>
@@ -63,7 +63,7 @@ const CheckSchedule =()=>{
             <div className="p-2 rounded-md  w-full">
                     <label className="pl-2 block mb-2 text-sm font-medium text-[#111827]">Jam</label>
                     <div className="relative ">
-                        <select className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3" onChange={(e)=> setValue({...value, hour : e.target.value})}>
+                        <select className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" onChange={(e)=> setValue({...value, hour : e.target.value})}>
                          <option value={undefined}>-----</option>
                         {HourList.map((val, idx)=>{ 
                             return (
@@ -74,7 +74,7 @@ const CheckSchedule =()=>{
                     </div>
                 </div>
         
-          <div className="flex flex-row justify-around bg-black border-2  text-white w-full h-10 items-center font-bold px-3 text-center text-sm md:text-base">
+          <div className="flex flex-row justify-around bg-black border-2  text-white w-full h-10 items-center font-bold px-3 text-center text-sm md:text-base  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
             <p className="w-1/5">Minggu</p>
             <p className="w-[30%]">Judul</p>
             <p className="w-1/5">Kelompok</p>

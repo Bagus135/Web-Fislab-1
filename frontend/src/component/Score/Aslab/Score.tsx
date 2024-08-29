@@ -78,13 +78,13 @@ const Score = () => {
 
 const CollapseJudul = ({children , noJudul, } : {children? : ReactNode, noJudul:number}) =>{
   return(
-    <div tabIndex={0} className="collapse collapse-arrow border-2 border-black  mt-5 shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500">
+    <div tabIndex={0} className="collapse collapse-arrow border-2 border-black  mt-5 shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]">
     <input type="checkbox" />
     <div className="collapse-title text-xl font-medium">
-      <p>{JudulPraktikum(noJudul-1)}</p>
+      <p className="dark:text-[#ffa31a]">{JudulPraktikum(noJudul-1)}</p>
       <p>{`E-${noJudul}`}</p>
     </div>
-    <div className="collapse-content bg-white">
+    <div className="collapse-content bg-white dark:bg-[#1b1b1b]">
       {children}
     </div>
   </div>
@@ -93,10 +93,10 @@ const CollapseJudul = ({children , noJudul, } : {children? : ReactNode, noJudul:
 
 const CollapseKelompok = ({children , noKelompok } : {children? : ReactNode, noKelompok:number}) =>{
   return(
-    <div tabIndex={0} className="collapse collapse-arrow border-2 border-black  mt-5 shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500">
+    <div tabIndex={0} className="collapse collapse-arrow border-2 border-black  mt-5 shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]">
     <input type="checkbox" className="h-0" />
-    <div className="collapse-title text-xl font-medium flex flex-col gap-2">{`Kelompok ${noKelompok}`}</div>
-    <div className=" collapse-content bg-white p-2">
+    <div className="collapse-title text-xl font-medium flex flex-col gap-2 dark:text-[#ffa31a]">{`Kelompok ${noKelompok}`}</div>
+    <div className=" collapse-content bg-white p-2 dark:bg-[#1b1b1b]">
       {children}
     </div>
   </div>
@@ -112,27 +112,28 @@ interface ListCardProp{
 const ListCard = ({detail, SelectPraktikan, GetProfile}:ListCardProp) =>{
   return(
     <>
-    <div className="flex flex-row justify-between items-center rounded-md border border-black mt-2 h-12 p-2 hover:bg-gray-200">
+    <div className="flex flex-row justify-between items-center rounded-md border border-black mt-2 h-12 p-2 hover:bg-gray-200 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]">
       <div className="flex flex-row justify-between w-11/12 pr-2 items-center py-2">
         <div className="flex flex-col w-full"  onClick={()=>{
           GetProfile(detail.userId);
           (document.getElementById('ModalProfile') as HTMLDialogElement).showModal()!
           }}>
-            <p className="font-bold">{detail.name}</p>
+            <p className="font-bold dark:text-[#ffa31a]">{detail.name}</p>
             <p>{detail.nrp}</p>
           </div>
 
               {detail.nilaiTotal === null ? 
-                <p className="text-sm md:text-base">Not Scored</p> 
+                <p className="text-sm md:text-base ">Not Scored</p> 
                 : 
-                <p  onClick={() =>{
+                <p className="" onClick={() =>{
                   SelectPraktikan(detail);
                   (document.getElementById(`ModalDetailScoring`) as HTMLDialogElement).showModal()}}>
                     {detail.nilaiTotal}
                 </p> 
               } 
       </div>
-      <SquarePlus onClick={() =>{
+      <SquarePlus className="dark:text-[#ffa31a]"
+      onClick={() =>{
         SelectPraktikan(detail);
         (document.getElementById(`ModalInputScore`) as HTMLDialogElement).showModal()
       }}/>

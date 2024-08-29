@@ -26,9 +26,9 @@ export const ModalDetailScore = ({detailScore, id}:{detailScore : aslabScoringDe
   }
     return (
   <dialog id={id} className="modal w-screen ">
-    <div className="modal-box">
+    <div className="modal-box dark:bg-[#1b1b1b]">
         <div className="flex flex-col text-center">
-            <h3 className="font-bold text-lg">{detailScore?.name}</h3>
+            <h3 className="font-bold text-lg dark:text-[#ffa31a]">{detailScore?.name}</h3>
             <p className="">{`${detailScore.nrp} - ${detailScore?.kelompokId}`}</p>
         </div>
         <div className="flex flex-col text-center">
@@ -43,14 +43,14 @@ export const ModalDetailScore = ({detailScore, id}:{detailScore : aslabScoringDe
         <ComponentListScore title="Kesimpulan" value={detailScore.Kesimpulan}/>
         <ComponentListScore title="Format" value={detailScore.Format}/>
         <div className="flex flex-row justify-between py-1">
-            <p className="font-bold">Total Score</p>
-            <p className="font-bold">{detailScore.nilaiTotal}</p>
+            <p className="font-bold dark:text-[#ffa31a]">Total Score</p>
+            <p className="font-bold dark:text-[#ffa31a]">{detailScore.nilaiTotal}</p>
         </div>
     
         
         <div className="flex flex-col">
-            <h3 className="font-bold text-center mt-3">Comment</h3>
-           <div className="bg-gray-200 border-2 border-gray-400 rounded-sm p-2">
+            <h3 className="font-bold text-center mt-5 mb-2">Comment</h3>
+           <div className="bg-gray-200 border-2 border-gray-400 rounded-sm p-2 dark:bg-[#1b1b1b] dark:border-[#808080]">
              {detailScore.comment}
            </div>
         </div>
@@ -133,9 +133,9 @@ export const ModalInputScore = ({detailScore, id, trigger, setTrigger}:{detailSc
   return (
   <dialog id={id} className="modal w-screen ">
     <div className="modal-box h-[75%]">
-        <h3 className="font-bold text-2xl pb-2 text-center">Input Score</h3>
-        <p className="pt-4 text-xl text-center font-semibold">{detailScore.name}</p>
-        <p className="pb-4 text-l text-center">{detailScore.nrp}</p>
+        <p className="text-xl text-center font-semibold dark:text-[#ffa31a]">{detailScore.name}</p>
+        <p className="pb-5 text-l text-center">{detailScore.nrp}</p>
+        <h3 className="font-bold text-2xl pb-5 text-center">Input Score</h3>
     <div className="flex flex-col">
             <InputComponent title="Pre Lab" placeholder="0-30" type="number" 
                             value={value.PreLab} 
@@ -170,10 +170,10 @@ export const ModalInputScore = ({detailScore, id, trigger, setTrigger}:{detailSc
                             setValue={(e)=> setValue({...value, Format : e.target.value })}/>
                             
             <div className="pb-2">
-                <label className="block mb-2 text-sm font-medium text-[#111827]">Comment</label>
+                <label className="block mb-2 text-sm font-medium text-[#111827] dark:text-white">Comment</label>
                 <div className="relative text-gray-400">
                     <input type='text'
-                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 h-20" 
+                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 h-20 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" 
                             placeholder='Kerja Bagus!!'
                             value={value.comment}
                             onChange={(e)=> setValue({...value, comment : e.target.value })}/>
@@ -182,7 +182,7 @@ export const ModalInputScore = ({detailScore, id, trigger, setTrigger}:{detailSc
 
             <button type="button" 
                     onClick={handleSubmit}
-                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6 ${isLoading? "btn btn-disabled" : ''}`}
+                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6  dark:bg-[#ffa31a] mt-5 dark:text-black ${isLoading? "btn btn-disabled" : ''}`}
                     disabled = {isLoading}> {isLoading? <div className="loading loading-spinner"/> : "Submit"}</button>
         </div>
     </div>
@@ -210,10 +210,10 @@ const ChangeTypeNumber = (a : InputScore)=>{
 const InputComponent = ({title, type, placeholder, value, setValue} : InputComponentProps) =>{
      return (
     <div className="pb-2">
-        <label className="block mb-2 text-sm font-medium text-[#111827]">{title}</label>
-        <div className="relative text-gray-400">
+        <label className="block mb-2 text-sm font-medium text-[#111827] dark:text-white">{title}</label>
+        <div className="relative text-gray-400 dark:text-white">
             <input type={type}
-                    className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[90%] p-2.5 rounded-l-lg py-3 px-4" 
+                    className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[90%] p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" 
                     placeholder={placeholder}
                     value={value}
                     onChange={setValue}

@@ -14,7 +14,7 @@ const AslabSchedule = () => {
 
     const ScheduleMap = schedule?.map((val, idx)=>{
       return (
-        <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md text-black w-full h-10 items-center font-bold pr-3 text-center text-sm md:text-base py-7">
+        <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md text-black w-full h-10 items-center font-bold pr-3 text-center text-sm md:text-base py-7 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
           <p className="w-1/5">{val.week}</p>
           <p className="w-[30%]">{JudulPraktikum(val.noJudul-1)}</p>
           <p className="w-1/5">{val.kelompokId}</p>
@@ -41,7 +41,7 @@ const AslabSchedule = () => {
     <ModalInputSchedule data={selectSchedule} id="ModalInputSchedule" Trigger={setTrigger} trigger={trigger}/>
     <ModalScheduleInfo id="ModalScheduleInfo"/>
       <div className="flex flex-col justify-stretch items-center gap-3 p-2">
-          <div className="flex flex-row justify-around bg-black border-2  text-white w-full h-10 items-center font-bold px-3 text-center text-sm md:text-base">
+          <div className="flex flex-row justify-around bg-black border-2  text-white w-full h-10 items-center font-bold px-3 text-center text-sm md:text-base dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
             <p className="w-1/5">Minggu</p>
             <p className="w-[30%]">Judul</p>
             <p className="w-1/5">Kelompok</p>
