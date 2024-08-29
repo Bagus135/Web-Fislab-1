@@ -36,7 +36,7 @@ const AllUsers = () => {
           </div>
           <div className="flex-grow flex flex-col ml-4">
               <div className="flex items-center justify-between">
-              <span className="text-xl font-bold">{val.fullname}</span> 
+              <span className="text-xl font-bold dark:text-white">{val.fullname}</span> 
                 </div>
               <div className="flex items-center justify-between">
                   <span className="text-gray-500">{val.nrp}</span>

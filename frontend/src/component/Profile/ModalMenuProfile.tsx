@@ -48,16 +48,16 @@ export const ModalEditProfile =({authUser, editProfile,loading}:ModalEditProfile
 
     return(
         <dialog id="ModalEditProfile" className="modal w-screen ">
-    <div className="modal-box">
+    <div className="modal-box dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]">
         <div className="flex flex-col gap-2">
-            <div className="text-center font-bold text-2xl pb-5"> Edit Profile</div>
+            <div className="text-center font-bold text-2xl pb-5 dark:text-white"> Edit Profile</div>
             <div className="pb-2">
-                <label className="block mb-2 text-sm font-medium text-[#111827]">{`Profile Picture (max 500kb)`}</label>
+                <label className="block mb-2 text-sm font-medium dark:text-white text-[#111827]">{`Profile Picture (max 500kb)`}</label>
             {!value.profilPic ? null :<img className='mb-5' src={value.profilPic}/>}
                 <div className="relative text-gray-400">
                     <input type='file'
                             accept="image/*"
-                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[100%] p-2.5 rounded-l-lg py-3 px-4" 
+                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[100%] p-2.5 rounded-l-lg py-3 px-4  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" 
                             onChange={(e)=> convertFile(e.target.files)}/>
                 </div>
             </div>
@@ -148,7 +148,7 @@ export const ModalChangePassword = ({authUser}:{ authUser : AuthUserTypes|null,}
         <dialog id="ModalChangePass" className="modal w-screen ">
     <div className="modal-box">
         <div className="flex flex-col gap-2">
-            <div className="text-center font-bold text-2xl pb-5"> Edit Profile</div>
+            <div className="text-center font-bold text-2xl pb-5 dark:text-white"> Edit Profile</div>
           
            <InputComponent title="Password" placeholder="*******"  value={value.pass!} setValue={(e)=> setValue({...value, pass : e.target.value})} type="text"/>
 
@@ -174,10 +174,10 @@ export const ModalChangePassword = ({authUser}:{ authUser : AuthUserTypes|null,}
 const InputComponent = ({title, type, placeholder, value, setValue} : InputComponentProps) =>{
     return (
    <div className="pb-2">
-       <label className="block mb-2 text-sm font-medium text-[#111827]">{title}</label>
+       <label className="block mb-2 text-sm font-medium text-[#111827] dark:text-white">{title}</label>
        <div className="relative text-gray-400">
            <input type={type}
-                   className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[100%] p-2.5 rounded-l-lg py-3 px-4" 
+                   className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[100%] p-2.5 rounded-l-lg py-3 px-4  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" 
                    placeholder={placeholder}
                    value={value!}
                    onChange={setValue}/>

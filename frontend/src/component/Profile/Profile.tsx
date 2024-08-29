@@ -45,7 +45,7 @@ const ProfilePrev = ({profile}:{profile:AuthUserTypes|null})=>{
         
         <div className="space-y-4 text-center pt-2">
             <div className="my-2 space-y-1">
-              <h2 className="text-xl font-semibold sm:text-2xl">{profile?.fullname}</h2>
+              <h2 className="text-xl font-semibold sm:text-2xl dark:text-white">{profile?.fullname}</h2>
               <p className="px-5 text-xs sm:text-base dark:text-[#ffa31a]">{profile?.nickname}</p>
             </div>
             <div className="flex flex-row gap-2 justify-center items-center">
@@ -69,42 +69,42 @@ const ProfileMenu =()=>{
             <div className="flex rounded-md  shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 flex-row items-center  w-full justify-between p-3  hover:scale-y-105 transition duration-200 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" onClick={() =>{
                   (document.getElementById(`ModalEditProfile`) as HTMLDialogElement).showModal()}}>
                 <div className="flex flex-row items-center gap-4">
-                    <UserRoundPen className="size-8 md:size-10"/>
+                    <UserRoundPen className="size-8 md:size-10 dark:text-white"/>
                     <div className="flex flex-col">
                         <p className="font-bold dark:text-[#ffa31a]">Edit Profile</p>
                         <p className="text-sm">Edit your profile here</p>
                     </div>
                 </div>
                 <div className="flex justify-end">
-                    <ChevronRight className=""/>
+                    <ChevronRight className="dark:text-white"/>
                 </div>
             </div>
 
             <div className="flex rounded-md  shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 flex-row items-center  w-full justify-between p-3 hover:scale-y-105 transition duration-200 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" onClick={() =>{
                   (document.getElementById(`ModalEditContact`) as HTMLDialogElement).showModal()}}>
                 <div className="flex flex-row items-center gap-4">
-                    <ContactRound className="size-10 "/>
+                    <ContactRound className="size-10 dark:text-white "/>
                     <div className="flex flex-col">
                         <p className="font-bold dark:text-[#ffa31a]">Contact</p>
                         <p className="text-sm">Add your contact number and social media here</p>
                     </div>
                 </div>
                 <div className="flex justify-end">
-                    <ChevronRight className=""/>
+                    <ChevronRight className="dark:text-white"/>
                 </div>
             </div>
 
             <div className="flex rounded-md  shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 flex-row items-center  w-full justify-between p-3  hover:scale-y-105 transition duration-200 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" onClick={() =>{
                   (document.getElementById(`ModalChangePass`) as HTMLDialogElement).showModal()}}>
                 <div className="flex flex-row items-center gap-4">
-                    <Lock className="size-8 "/>
+                    <Lock className="size-8  dark:text-white"/>
                     <div className="flex flex-col">
                         <p className="font-bold dark:text-[#ffa31a]">Password</p>
                         <p className="text-sm"> Change your password here</p>
                     </div>
                 </div>
                 <div className="flex justify-end">
-                    <ChevronRight className=""/>
+                    <ChevronRight className="dark:text-white"/>
                 </div>
             </div>
         </div>

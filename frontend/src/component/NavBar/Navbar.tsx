@@ -22,10 +22,10 @@ const ProfileUser = () =>{
   const {logout, isLoading}= useLogout()
     return(
         <div className="flex-1 justify-end">
-      <div className="dropdown dropdown-end dark:bg-[#1b1b1b]">
+      <div className="dropdown dropdown-end ">
         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
           <div className="w-8 md:w-10 rounded-full">
-            <img
+            <img className="dark:bg-[#ffa31a] dark:hover:bg-[#ff7d12]"
               alt="You"
               src={ !authUser?.profilPic ? "/user.png"  : authUser?.profilPic} />
           </div>

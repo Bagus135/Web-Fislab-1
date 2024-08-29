@@ -20,7 +20,7 @@ const PraktikanScore = () => {
         
         const detailScorePraktikum = nilai[`praktikum${idx+1}`] as DetailScorePraktikum
         return (
-            <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md  w-full h-20 items-center font-semibold text-center text-sm md:text-base py-7">
+            <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md  w-full h-20 items-center font-semibold text-center text-sm md:text-base py-7 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
                 <p className="w-[15%]">{`E-${idx+1}`}</p>
                 <p className="w-[30%]">{JudulPraktikum(idx)}</p>
                 <p className="w-[35%]" onClick={()=>{
@@ -52,7 +52,7 @@ const PraktikanScore = () => {
         <ProfileModal profile={Profile} loading={LoadingProfile}/>
         <DetailScoreModal detailScore={detailScore}/>
         <div className="flex flex-col justify-stretch items-center gap-3 p-2">
-            <div className="flex flex-row justify-around bg-black border-2  text-white w-full h-10 items-center font-bold px-1 text-center text-sm md:text-base">
+            <div className="flex flex-row justify-around bg-black border-2  text-white w-full h-10 items-center font-bold px-1 text-center text-sm md:text-base dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
                 <p className="pl-2 w-[15%]">Kode</p>
                 <p className="w-[30%]">Judul</p>
                 <p className="w-[35%]">Aslab</p>

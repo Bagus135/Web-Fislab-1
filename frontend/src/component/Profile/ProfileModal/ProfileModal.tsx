@@ -29,7 +29,7 @@ const ProfileModal = ({profile, loading} : { profile : ProfileTypes|null, loadin
           <img src={profile.profilPic!} alt="" className="w-32 h-32 mx-auto rounded-xl dark:bg-gray-500 aspect-square" />
           <div className="space-y-4 text-center">
             <div className="my-2 space-y-1">
-              <h2 className="text-xl font-semibold sm:text-2xl ">{profile.fullname}</h2>
+              <h2 className="text-xl font-semibold sm:text-2xl dark:text-white ">{profile.fullname}</h2>
               <p className="px-5 text-xs sm:text-base dark:text-[#ffa31a] ">{profile.nickname}</p>
             </div>
             <div className="flex flex-row gap-2 justify-center items-center">
