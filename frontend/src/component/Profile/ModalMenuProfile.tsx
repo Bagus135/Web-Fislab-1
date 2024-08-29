@@ -67,7 +67,7 @@ export const ModalEditProfile =({authUser, editProfile,loading}:ModalEditProfile
 
            <button type="button" 
                     onClick={handleSubmit}
-                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6 ${loading? "btn btn-disabled" : ''}`}
+                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6 dark:bg-[#ffa31a] dark:text-black dark:hover:bg-[$] ${loading? "btn btn-disabled" : ''}`}
                     disabled = {loading}> {loading? <div className="loading loading-spinner"/> : "Upload"}
             </button>
         </div>
