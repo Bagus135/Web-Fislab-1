@@ -67,7 +67,7 @@ export const ModalEditProfile =({authUser, editProfile,loading}:ModalEditProfile
 
            <button type="button" 
                     onClick={handleSubmit}
-                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6 dark:bg-[#ffa31a] dark:text-black dark:hover:bg-[$] ${loading? "btn btn-disabled" : ''}`}
+                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6 dark:bg-[#ffa31a] dark:text-black dark:hover:bg-[#ff7d12] ${loading? "btn btn-disabled" : ''}`}
                     disabled = {loading}> {loading? <div className="loading loading-spinner"/> : "Upload"}
             </button>
         </div>
@@ -105,7 +105,7 @@ export const ModalEditContact = ({authUser, editProfile,loading}:ModalEditProfil
         <dialog id="ModalEditContact" className="modal w-screen ">
     <div className="modal-box">
         <div className="flex flex-col gap-2">
-            <div className="text-center font-bold text-2xl pb-5"> Edit Contact</div>
+            <div className="text-center font-bold text-2xl pb-5 dark:text-white"> Edit Contact</div>
           
            <InputComponent title="Whatsapp" placeholder="+6283817837   Pakai format +62!!" value={value.contact!} setValue={(e)=> setValue({...value, contact : e.target.value})} type="text"/>
            <InputComponent title="Instagram" placeholder="https://instagram.com " value={value.ig!} setValue={(e)=> setValue({...value, ig : e.target.value})} type="text"/>
@@ -114,7 +114,7 @@ export const ModalEditContact = ({authUser, editProfile,loading}:ModalEditProfil
 
            <button type="button" 
                     onClick={handleSubmit}
-                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6 ${loading? "btn btn-disabled" : ''}`}
+                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6  dark:bg-[#ffa31a] dark:text-black dark:hover:bg-[#ff7d12] ${loading? "btn btn-disabled" : ''}`}
                     disabled = {loading}> {loading? <div className="loading loading-spinner"/> : "Upload"}
             </button>
         </div>
@@ -148,7 +148,7 @@ export const ModalChangePassword = ({authUser}:{ authUser : AuthUserTypes|null,}
         <dialog id="ModalChangePass" className="modal w-screen ">
     <div className="modal-box">
         <div className="flex flex-col gap-2">
-            <div className="text-center font-bold text-2xl pb-5 dark:text-white"> Edit Profile</div>
+            <div className="text-center font-bold text-2xl pb-5 dark:text-white"> Change Password</div>
           
            <InputComponent title="Password" placeholder="*******"  value={value.pass!} setValue={(e)=> setValue({...value, pass : e.target.value})} type="text"/>
 
@@ -156,7 +156,7 @@ export const ModalChangePassword = ({authUser}:{ authUser : AuthUserTypes|null,}
 
            <button type="button" 
                     onClick={handleSubmit}
-                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6 ${isLoading? "btn btn-disabled" : ''}`}
+                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6 dark:bg-[#ffa31a] dark:text-black dark:hover:bg-[#ff7d12] ${isLoading? "btn btn-disabled" : ''}`}
                     disabled = {isLoading}> {isLoading? <div className="loading loading-spinner"/> : "Change"}
             </button>
         </div>

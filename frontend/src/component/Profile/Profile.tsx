@@ -55,7 +55,7 @@ const ProfilePrev = ({profile}:{profile:AuthUserTypes|null})=>{
             </div>
             <div className="my-2 ">
                 <hr className="md:mt-10"/>
-              <p className="px-5 text-xs sm:text-base mt-2 text-center md:mt-4">{profile?.description}</p>
+              <p className="px-5 text-xs sm:text-base mt-2 text-center md:mt-4">{profile?.description ===null ? "No Description" : profile?.description}</p>
                 <hr className="mt-2"/>
             </div>
         </div>
@@ -66,7 +66,7 @@ const ProfilePrev = ({profile}:{profile:AuthUserTypes|null})=>{
 const ProfileMenu =()=>{
      return (
         <div className="flex flex-col justify-stretch w-full mt-5 gap-5">
-            <div className="flex rounded-md  shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 flex-row items-center  w-full justify-between p-3  hover:scale-y-105 transition duration-200 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" onClick={() =>{
+            <div className="flex rounded-md  shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 flex-row items-center  w-full justify-between p-3 border hover:scale-y-105 transition duration-200 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" onClick={() =>{
                   (document.getElementById(`ModalEditProfile`) as HTMLDialogElement).showModal()}}>
                 <div className="flex flex-row items-center gap-4">
                     <UserRoundPen className="size-8 md:size-10 dark:text-white"/>
@@ -80,7 +80,7 @@ const ProfileMenu =()=>{
                 </div>
             </div>
 
-            <div className="flex rounded-md  shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 flex-row items-center  w-full justify-between p-3 hover:scale-y-105 transition duration-200 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" onClick={() =>{
+            <div className="flex rounded-md  shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 flex-row items-center  w-full justify-between p-3 border hover:scale-y-105 transition duration-200 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" onClick={() =>{
                   (document.getElementById(`ModalEditContact`) as HTMLDialogElement).showModal()}}>
                 <div className="flex flex-row items-center gap-4">
                     <ContactRound className="size-10 dark:text-white "/>
@@ -94,7 +94,7 @@ const ProfileMenu =()=>{
                 </div>
             </div>
 
-            <div className="flex rounded-md  shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 flex-row items-center  w-full justify-between p-3  hover:scale-y-105 transition duration-200 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" onClick={() =>{
+            <div className="flex border rounded-md  shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 flex-row items-center  w-full justify-between p-3  hover:scale-y-105 transition duration-200 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" onClick={() =>{
                   (document.getElementById(`ModalChangePass`) as HTMLDialogElement).showModal()}}>
                 <div className="flex flex-row items-center gap-4">
                     <Lock className="size-8  dark:text-white"/>
