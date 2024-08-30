@@ -33,6 +33,7 @@ function App(){
       <Navbar/>
       <div className="relative top-16 w-full">
       <Routes>
+        <Route path="/" element = { !authUser? <Navigate to={'/login'}/> : <Navigate to={'/dashboard'}/> } />
         <Route path="/login" element = { !authUser? <Login/> : <Navigate to={'/dashboard'}/>} />
         <Route path="/dashboard" element = { authUser? <Dashboard/> : <Navigate to={'/login'}/>} />
         <Route path="/signup" element = { !authUser? <Navigate to={'/login'}/> : (authUser.role > 2 ? <SignUp/> : <NotAuth pageName="Sign Up"/> ) } />

@@ -19,18 +19,18 @@ const Announcement = () => {
         onClick={() => {
             setSelectedList(val);
             (document.getElementById('ModalDetailAnnouncement') as HTMLDialogElement).showModal()!}}
-        className=" hover:bg-gray-200 hover:rounded-sm  hover:px-0 flex flex-row max-w-full max-h-40 overflow-hidden items-center px-2">
+        className=" hover:bg-gray-200 hover:rounded-sm dark:hover:bg-[#808080] dark:hover:text-black hover:px-0 flex flex-row max-w-full max-h-40 overflow-hidden items-center px-2">
             <img src="/toa.png" alt="Icon" className="w-[12%] max-w-14 flex items-center justify-center" />
             
             <div className="flex flex-col mr-3 ml-3 md:ml-5 w-full pl-2 text-justify">
-                <div className="font-bold text-l text-left line-clamp-1 w-full md:text-xl ">
+                <div className="font-bold text-l text-left line-clamp-1 w-full md:text-xl dark:text-[#ffa31a] ">
                     {val.title}
                 </div>
-                <div className=" text-sm text-justify line-clamp-3 md:text-xl">
+                <div className=" text-sm text-justify line-clamp-3 md:text-xl ">
                     {val.description}
                 </div>
             </div>
-            <ChevronRight className="md:size-10"/>
+            <ChevronRight className="md:size-10 dark:text-white "/>
         </div>
         )
     })
@@ -41,11 +41,11 @@ const Announcement = () => {
   <ModalAdd setTrigger={setTrigger} authUser={authUser!} trigger={trigger}/>
     <div className="flex flex-col w-full p-3">
         <div className='flex flex-row justify-between items-center'>
-            <p className="font-bold text-xl md:text-2xl text-left pb-5"> Pengumuman</p>
+            <p className="font-bold text-xl md:text-2xl text-left pb-5 dark:text-white"> Pengumuman</p>
             {(authUser?.role as number) >2 ?
             <button
             onClick={() => (document.getElementById('ModalAddAnnouncement') as HTMLDialogElement).showModal()!}
-            className={`mt-5 text-[#FFFFFF] bg-[rgb(6,6,6)] h-focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  w-[15%] mb-6  flex justify-center hover:scale-90 transition duration-500 hover:bg-gray-800 ${isLoading? "btn btn-disabled" : ''}`}
+            className={`mt-5 text-[#FFFFFF] bg-[rgb(6,6,6)] h-focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  w-[15%] mb-6  flex justify-center hover:scale-90 transition duration-500 hover:bg-gray-800 dark:bg-[#ffa31a]  dark:text-black dark:hover:text-[#ffa31a] ${isLoading? "btn btn-disabled" : ''}`}
             disabled = {isLoading}> 
                             {isLoading? <div className="loading loading-spinner"/> 
                             : 
@@ -57,7 +57,7 @@ const Announcement = () => {
             : null    
             }
         </div>
-        <div  className="bg-white px-2 rounded shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300  w-full border border-black py-6 flex flex-col gap-7 md:gap-10">
+        <div  className="bg-white px-2 rounded shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300  w-full border border-black py-6 flex flex-col gap-7 md:gap-10  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] ]">
             { isLoading?
             <div className="flex justify-center">
                 <button className="loading loading-spinner"/>

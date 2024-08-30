@@ -38,7 +38,7 @@ const ShortLinkAdmin = ({authUser}:{authUser:AuthUserTypes}) => {
                 <label className="pl-2 block mb-2 text-sm font-medium text-[#111827] dark:text-white">Title</label>
                 <div className="relative text-gray-400">
                     <input type="text"
-                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" 
+                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]" 
                             placeholder="Title"
                             value={value.title}
                             onChange={(e)=> setValue({...value, title : e.target.value})}/>
@@ -49,7 +49,7 @@ const ShortLinkAdmin = ({authUser}:{authUser:AuthUserTypes}) => {
                 <label className="pl-2 block mb-2 text-sm font-medium text-[#111827] dark:text-white">Description</label>
                 <div className="relative text-gray-400">
                     <input type="text"
-                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" 
+                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]" 
                             placeholder="desc"
                             value={value.description}
                             onChange={(e)=> setValue({...value, description : e.target.value})}/>
@@ -60,7 +60,7 @@ const ShortLinkAdmin = ({authUser}:{authUser:AuthUserTypes}) => {
                 <label className="pl-2 block mb-2 text-sm font-medium text-[#111827] dark:text-white">Url</label>
                 <div className="relative text-gray-400">
                     <input type="text"
-                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" 
+                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]" 
                             placeholder="https://xxxx.xxxxx"
                             value={value.link}
                             onChange={(e)=> setValue({...value, link : e.target.value})}/>
@@ -73,7 +73,7 @@ const ShortLinkAdmin = ({authUser}:{authUser:AuthUserTypes}) => {
                     <span className="absolute inset-y-0 left-0 flex items-center p-1 pl-3">/
                         </span>
                     <input type="text"
-                            className="pl-7 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" 
+                            className="pl-7 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]" 
                             placeholder="modul"
                             value={value.shortLink}
                             onChange={(e)=> setValue({...value, shortLink : e.target.value})}/>

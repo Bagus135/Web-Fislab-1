@@ -33,7 +33,7 @@ const ViewPraktikanScore = () => {
         })
         if(n||nilaiTotal) nilaiRataRata = nilaiTotal!/n!
         return (
-            <div className="rounded-md w-full shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300  flex flex-row items-center border border-black gap-4 p-2 text-center" key={idx}>
+            <div className="rounded-md w-full shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300  flex flex-row items-center border border-black gap-4 p-2 text-center  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] " key={idx}>
                 <div className="w-[25%]" 
                 onClick={()=>{
                 getProfile(val.userID);
@@ -43,7 +43,7 @@ const ViewPraktikanScore = () => {
                 </div>
                 <div className="w-[25%]">{nrp}</div>
                 <div className="w-[25%]">Kelompok-{val.kelompokid}</div>
-                <div className="w-[25%]">{nilaiRataRata}</div>
+                <div className="w-[25%] dark:text-[#ffa31a]">{nilaiRataRata}</div>
             </div>
         )
     })
@@ -73,7 +73,7 @@ const ViewPraktikanScore = () => {
     <ModalDelete resetScore={resetScore}/>
     <ProfileModal profile={Profile} loading={LoadingProfile}/>
     <div className="p-2 flex-col flex justify-stretch items-center gap-4">
-        <div className="text-center font-bold text-2xl pt-5"> All Score Praktikan</div>
+        <div className="text-center font-bold text-2xl pt-5 dark:text-white pb-5"> All Score Praktikan</div>
         {dataScores.length == 0 ? 
         <p className="text-center">
             ---No Data---
@@ -118,7 +118,7 @@ const ModalDelete = ({resetScore}:{resetScore : ()=> Promise<void>}) =>{
     <dialog id="ModalResetFinalScore" className="modal w-screen">
         <div className="modal-box">
             <div className="justify-center flex flex-col items-center p-2 gap-3">
-                <p className=" text-2xl font-bold text-center">Warning!</p> 
+                <p className=" text-2xl font-bold text-center dark:text-white">Warning!</p> 
                 <p className="text-center">Are you sure to reset?</p> 
                 <button
             onClick={()=> {resetScore();

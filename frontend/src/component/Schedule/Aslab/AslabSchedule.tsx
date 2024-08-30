@@ -11,10 +11,11 @@ const AslabSchedule = () => {
     const [selectSchedule, setSelectSchedule] = useState<AslabSchedule|null>(null);
 
     if(isLoading) return <Loading/>
+    if(!schedule) return <p className="text-center">{`Not Scheduled`}</p>
 
     const ScheduleMap = schedule?.map((val, idx)=>{
       return (
-        <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md text-black w-full h-10 items-center font-bold pr-3 text-center text-sm md:text-base py-7 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
+        <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md text-black w-full h-10 items-center font-bold pr-3 text-center text-sm md:text-base py-7 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-white">
           <p className="w-1/5">{val.week}</p>
           <p className="w-[30%]">{JudulPraktikum(val.noJudul-1)}</p>
           <p className="w-1/5">{val.kelompokId}</p>
@@ -28,7 +29,7 @@ const AslabSchedule = () => {
               </>
             }
             </p>
-          <PlusSquare  onClick={() =>{
+          <PlusSquare className="dark:text-[#ffa31a] dark:hover:text-[#ff7d12]" onClick={() =>{
         setSelectSchedule(val);
         (document.getElementById(`ModalInputSchedule`) as HTMLDialogElement).showModal()
       }}/>
@@ -46,7 +47,7 @@ const AslabSchedule = () => {
             <p className="w-[30%]">Judul</p>
             <p className="w-1/5">Kelompok</p>
             <p className="w-[30%] ml-2">Jadwal</p>
-            <Info onClick={()=> (document.getElementById(`ModalScheduleInfo`) as HTMLDialogElement).showModal()}/>
+            <Info className="dark:hover:text-[#ff7d12]" onClick={()=> (document.getElementById(`ModalScheduleInfo`) as HTMLDialogElement).showModal()}/>
           </div>
          {ScheduleMap?.length === 0 ? `Not Schedule Yet`: ScheduleMap}
       </div>

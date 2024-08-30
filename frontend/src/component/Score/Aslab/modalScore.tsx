@@ -173,7 +173,7 @@ export const ModalInputScore = ({detailScore, id, trigger, setTrigger}:{detailSc
                 <label className="block mb-2 text-sm font-medium text-[#111827] dark:text-white">Comment</label>
                 <div className="relative text-gray-400">
                     <input type='text'
-                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 h-20 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" 
+                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 h-20 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]" 
                             placeholder='Kerja Bagus!!'
                             value={value.comment}
                             onChange={(e)=> setValue({...value, comment : e.target.value })}/>
@@ -213,7 +213,7 @@ const InputComponent = ({title, type, placeholder, value, setValue} : InputCompo
         <label className="block mb-2 text-sm font-medium text-[#111827] dark:text-white">{title}</label>
         <div className="relative text-gray-400 dark:text-white">
             <input type={type}
-                    className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[90%] p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" 
+                    className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[90%] p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]" 
                     placeholder={placeholder}
                     value={value}
                     onChange={setValue}

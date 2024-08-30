@@ -11,7 +11,7 @@ const GenderCheckBox =  ({
                     <label className={"label gap-2 cursor-pointer"}>
                         <span className="label-text">Male</span>
                         <input type="checkbox"
-                                className="checkbox border-slate-900"
+                                className="checkbox border-slate-900 dark:bg-[#808080]" 
                                 checked={selectedGender === 'male'}
                                 onChange={()=> onCheckboxChange("male")}/>
                     </label>
@@ -20,7 +20,7 @@ const GenderCheckBox =  ({
                     <label className={"label gap-2 cursor-pointer"}>
                         <span className="label-text">Female</span>
                         <input type="checkbox"
-                                className="checkbox border-slate-900"
+                                className="checkbox border-slate-900 dark:bg-[#808080]"
                                 checked={selectedGender === 'female'}
                                 onChange={()=> onCheckboxChange("female")}/>
                     </label>

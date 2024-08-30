@@ -9,7 +9,7 @@ const InfoBoard = () => {
   const [selectedList, setSelectedList] = useState<AnnounceTypeRes|null>(null)
   if(!Announcement) return(
     <div className="flex justify-stretch w-full">
-    <div className="bg-white px-2 rounded shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300 mt-5 mx-5 mb-5 w-full border border-black pt-2 pb-6 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
+    <div className="bg-white px-2 rounded shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300 mt-5 mx-5 mb-5 w-full border border-black pt-2 pb-6 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] ">
         <div className="text-center font-bold text-2xl px-2 pt-2 pb-6 w-full md:text-3xl ">Pengumuman</div>
           <div className="flex justify-center">
             <div className="loading loading-dots"/>
@@ -45,7 +45,7 @@ const InfoBoard = () => {
     <ModalDetail selectedList={selectedList!} />
 <div className="flex justify-stretch w-full">
     <div className="bg-white px-2 rounded shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300 dark:shadow-[#292929] mt-5 mx-5 mb-5 w-full border border-black pt-2 pb-6 dark:bg-[#1b1b1b] dark:border-[#808080]">
-        <div className="text-center font-bold text-2xl px-2 pt-2 pb-6 w-full md:text-3xl ">Pengumuman</div>
+        <div className="text-center font-bold text-2xl px-2 pt-2 pb-6 w-full md:text-3xl dark:text-white">Pengumuman</div>
           <div className="flex w-full flex-col gap-6">
           {Announcement.length == 0 ? 
           <p className="text-center">Tidak Ada Pengumuman</p>

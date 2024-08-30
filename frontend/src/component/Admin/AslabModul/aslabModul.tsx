@@ -63,7 +63,7 @@ const AslabModul = () => {
     })
     const dataGroupMap = dataJudul.map((val, idx)=>{
         return (
-            <div className="rounded-md w-full shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300  flex flex-row items-center border border-black gap-1 p-2" key={idx}>
+            <div className="rounded-md w-full shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300  flex flex-row items-center border border-black gap-1 p-2  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]" key={idx}>
                 <div className="text-center w-[10%]">{val.kodeJudul}</div>
                 <div className="text-center w-[45%]">{val.judul}</div>
                 <div className="text-center w-[35%]" onClick={()=>{
@@ -87,13 +87,13 @@ const AslabModul = () => {
     <>
      <ProfileModal profile={Profile} loading={LoadingProfile}/>
     <div className="w-full p-2">
-    <h1 className="font-bold text-2xl text-center mt-5"> Judul Aslab</h1>
+    <h1 className="font-bold text-2xl text-center mt-5 dark:text-white"> Judul Aslab</h1>
         <form className='w-full flex flex-col items-center justify-start  mt-5 p-2' onSubmit={handleSubmit}>
         
         <div className="pb-2 w-full">
-            <label className="pl-2 block mb-2 text-sm font-medium text-[#111827]">Aslab</label>
+            <label className="pl-2 block mb-2 text-sm font-medium text-[#111827] dark:text-[#808080]">Aslab</label>
             <div className="relative w-full">
-                <select onChange={handleSelectName} className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3">
+                <select onChange={handleSelectName} className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
                 <option value={undefined}>-----</option>
                 {Aslab!.map((val : AllUsers, idx : number)=>{ return (
                     <option value={idx} key={idx}>
@@ -106,9 +106,9 @@ const AslabModul = () => {
         </div>
         
         <div className="pb-2 w-full">
-            <label className="pl-2 block mb-2 text-sm font-medium text-[#111827]">Judul</label>
+            <label className="pl-2 block mb-2 text-sm font-medium text-[#111827] dark:text-[#808080]">Judul</label>
             <div className="relative w-full">
-                <select  id="nameSelect" onChange={handleSelectJudul} className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3">
+                <select  id="nameSelect" onChange={handleSelectJudul} className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
                 <option value={undefined}>-----</option>
                 {[...Array(10)].map((_, idx : number)=>{ return (
                 <option value={idx+1} key={idx+1}>{`E-${idx+1}`}</option>
@@ -119,17 +119,17 @@ const AslabModul = () => {
         </div>
 
         <button type="submit"
-                    className={`mt-5 text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full mb-6 hover:bg-gray-800 ${isLoading? "btn btn-disabled" : ''}`}
+                    className={`mt-5 text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full mb-6 hover:bg-gray-800 dark:bg-[#ffa31a] dark:text-black dark:hover:bg-[#ff7d12] ${isLoading? "btn btn-disabled" : ''}`}
                     disabled = {isLoading}> 
                             {isLoading? <div className="loading loading-spinner"/> : "Add"}
         </button>
       </form>
       <div className="flex flex-col justify-stretch items-center gap-3 p-2">
-            <div className="flex flex-row justify-around bg-black border-2  text-white w-full h-10 items-center font-bold px-3 text-center text-sm md:text-base">
+            <div className="flex flex-row justify-around bg-black border-2  text-white w-full h-10 items-center font-bold px-3 text-center text-sm md:text-base  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
                 <p className="w-[10%]">Kode</p>
                 <p className="w-[45%]">Judul</p>
                 <p className="w-[35%]">Aslab</p>  
-                <p className="w-[10%]"></p>  
+                <p className="w-[10%]"/> 
             </div>
             {LoadAllGroup? 
             <>

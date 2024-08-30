@@ -7,7 +7,7 @@ const Shortlink = ({authUser}:{authUser :AuthUserTypes}) => {
   const {ShortLink,isLoading} = useShortLinkContext();
   const {deleteShortlink, loading} = useDeleteShortlink()
   if(isLoading) return <Loading/>
-  if(!ShortLink) return <div>Not Shortlink added</div>
+  if(!ShortLink) return <div className="text-centers">Not Shortlink added</div>
     
   const shortLinkMap = ShortLink.map((val : getShortLink, idx:number)=>{
     return (

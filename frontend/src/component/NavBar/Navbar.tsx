@@ -52,7 +52,7 @@ const Navbar = () => {
     <header className="navbar bg-base-100 fixed top-0 shadow-md px-2 z-50 dark:bg-[#1b1b1b]">
     <div className="flex-none">
         {currentLocation.pathname === "/login"? null: <MenuButton/> }
-      <div className="text-xl md:text-3xl font-bold text-black dark:bg-[#ffa31a] dark:text-black px-2 flex flex-row gap-2">
+      <div className="text-xl md:text-3xl font-bold text-black dark:bg-[#ffa31a] dark:text-black px-2 flex flex-row gap-2 rounded-md">
         <div className=" h-[80%] text-center text-black">FISLAB</div>
         <div className="">I</div> 
       </div>

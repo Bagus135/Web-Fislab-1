@@ -31,14 +31,14 @@ const ModalAdd = ({authUser, trigger, setTrigger}: ModalAddProps) => {
 <dialog id="ModalAddAnnouncement" className="modal w-screen">
     <div className="modal-box">
         <div className="w-full flex flex-col gap-3 p-2">
-             <p className='font-bold text-2xl text-center pt-2 pb-4'>
+             <p className='font-bold text-2xl text-center pt-2 pb-4 dark:text-white'>
                 Add Announcement
              </p>
 
                 <div className="pb-2">
-                    <label className="block mb-2 text-sm font-medium text-[#111827]">Kategori</label>
+                    <label className="block mb-2 text-sm font-medium text-[#111827] dark:text-white">Kategori</label>
                     <div className="relative text-gray-400">
-                    <select  onChange={(e)=> setValue({...Value, category : e.target.value})} className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3">
+                    <select  onChange={(e)=> setValue({...Value, category : e.target.value})} className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
                         <option value={null!}>------------</option>
                         <option value={'Umum'}>Umum</option>
                         <option value={'In Lab'}>In Lab</option>
@@ -50,10 +50,10 @@ const ModalAdd = ({authUser, trigger, setTrigger}: ModalAddProps) => {
                 </div>
                 
                 <div className="pb-2">
-                    <label className="block mb-2 text-sm font-medium text-[#111827]">Title</label>
+                    <label className="block mb-2 text-sm font-medium text-[#111827] dark:text-white">Title</label>
                     <div className="relative text-gray-400">
                         <input type="text"
-                        className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[100%] p-2.5 rounded-l-lg py-3 px-4" 
+                        className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[100%] p-2.5 rounded-l-lg py-3 px-4  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]" 
                         placeholder="Judul Pengumuman"
                         value={Value.title!}
                         onChange={(e)=> setValue({...Value, title : e.target.value})}/>
@@ -61,10 +61,10 @@ const ModalAdd = ({authUser, trigger, setTrigger}: ModalAddProps) => {
                 </div>
 
                 <div className="pb-2">
-                    <label className="block mb-2 text-sm font-medium text-[#111827]">Deskripsi</label>
+                    <label className="block mb-2 text-sm font-medium text-[#111827] dark:text-white">Deskripsi</label>
                     <div className="relative text-gray-400">
                         <input type="text"
-                        className="  pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[100%] py-2.5 rounded-l-lg leading-10 px-4 " 
+                        className="  pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-[100%] py-2.5 rounded-l-lg leading-10 px-4  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]" 
                         placeholder="Judul Pengumuman"
                         value={Value.desc!}
                         onChange={(e)=> setValue({...Value, desc : e.target.value})}/>
@@ -73,7 +73,7 @@ const ModalAdd = ({authUser, trigger, setTrigger}: ModalAddProps) => {
 
                 <button
             onClick={handlerSubmit}
-                    className={`mt-5 text-[#FFFFFF] bg-[rgb(6,6,6)] h-focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  w-[100%] mb-6  flex justify-center hover:scale-90 transition duration-500 hover:bg-gray-800 ${isLoading? "btn btn-disabled" : ''}`}
+                    className={`mt-5 text-[#FFFFFF] bg-[rgb(6,6,6)] h-focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  w-[100%] mb-6  flex justify-center hover:scale-90 transition duration-500 hover:bg-gray-800 dark:bg-[#ffa31a] dark:text-black dark:hover:bg-[#ff7d12] ${isLoading? "btn btn-disabled" : ''}`}
                     disabled = {isLoading}> 
                             {isLoading? <div className="loading loading-spinner"/> 
                             : 

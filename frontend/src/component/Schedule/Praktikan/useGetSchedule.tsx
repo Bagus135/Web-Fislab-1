@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Axios from "../../../utils/axios";
-import toast from "react-hot-toast";
 
 const useGetschedule = () => {
     const [schedule, setSchedule] = useState<any[]|null>(null)
@@ -15,8 +14,7 @@ const useGetschedule = () => {
                     throw new Error(`${err.response.status} - ${err.response.statusText} \n ${err.response.data.error}`)
                 })
                 setSchedule(res.data.payload);
-            } catch (error: any) {
-                toast.error(error.message)
+                console.log(res.data.payload)
             } finally {
                 setIsLoading(false)
             }

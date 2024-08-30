@@ -18,7 +18,7 @@ const TimeGreeting = () => {
         src={componentGreeting.pic[randomInt]}
         className="h-40 z-0 w-40 items-stretch rounded-lg shadow-2xl md:w-56 md:h-56 m-2 lg:h-72 lg:w-72" />
       <div className="flex flex-col pl-2 md:pl-10 ">
-        <div className="flex flex-col md:flex-row text-xl font-bold md:text-3xl lg:text-4xl">
+        <div className="flex flex-col md:flex-row text-xl font-bold md:text-3xl lg:text-4xl dark:text-white">
           <h1 className="top-6  md:mr-4">Good {componentGreeting.time}! </h1>
           <h1 className="text-lg md:text-3xl lg:text-4xl"> {`${authUser?.gender === 'female' ? `Dek` : `Mas`} ${authUser?.nickname || authUser?.fullname}`}</h1>
         </div>

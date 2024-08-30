@@ -1,24 +1,30 @@
-import { Ellipsis,} from "lucide-react";
+import { Ellipsis, Search,} from "lucide-react";
 import Loading from "../Other/Loading";
 import useGetUsers from "./useGetUsers";
 import { useAuthContext } from "../../context/AuthContext";
 import useGetProfile from "../Profile/ProfileModal/useGetProfile";
 import ProfileModal from "../Profile/ProfileModal/ProfileModal";
 import RoleModal from "../Profile/ProfileModal/Role";
+import { useState } from "react";
 
 const AllUsers = () => {
-  const{isLoading, users, setTrigger, trigger} = useGetUsers()
+  const {isLoading, users, setTrigger, trigger} = useGetUsers()
   const {authUser} = useAuthContext()
   const {Profile, getProfile, isLoading:LoadingProfile} =useGetProfile()
+  const [searchNRP , setSearchNRP] = useState<string|null>(null)
+  const [clickSearch, setClickSearch] = useState<boolean>(false)
 
   if(isLoading || !users) return <Loading/>
-  const role = ['Praktikan', "Aslab", "Admin", "Manipulator"]
   
-  const mapUsers = users?.map((val : AllUsers, idx : number)=>{
+  let usersFilter = users;
+  const role = ['Praktikan', "Aslab", "Admin", "Manipulator"]
+  if(searchNRP?.length !==0) usersFilter = usersFilter.filter(val => val.nrp === searchNRP)
+
+  const mapUsers = usersFilter?.map((val : AllUsers, idx : number)=>{
     return (
       <div key={idx} className="">
         {authUser?.role ===4 ?<div className="flex flex-row justify-end px-3"> 
-            <Ellipsis className="z-50 hover:bg-slate-400  top-5 " onClick={()=>{
+            <Ellipsis className=" hover:bg-slate-400  top-5 " onClick={()=>{
             getProfile(val.id);
             (document.getElementById('ModalRole') as HTMLDialogElement).showModal()!
             }} />
@@ -49,11 +55,30 @@ const AllUsers = () => {
 })
 
     return (
+      <>
+  <ProfileModal profile={Profile} loading={LoadingProfile}/>
+  <RoleModal profile={Profile} setTrigger={setTrigger} trigger={trigger} load={LoadingProfile}/>
+  <div className="flex flex-row gap-3 p-2 items-center">
+      <div className="rounded-md  mt-3 mr-10 w-[90%] overflow-hidden">
+                <div className="relative text-gray-400 ">
+                    <input type="text"
+                            className={`${clickSearch? 'translate-x-full': ''}  transform transition-transform ease-in duration-500 pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent  block w-full rounded-l-lg py-3 px-2 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]`} 
+                            placeholder="desc"
+                            disabled={clickSearch}
+                            value={searchNRP!}
+                            onChange={(e)=> setSearchNRP(e.target.value)}/>
+                </div>
+            </div>
+            <button className="w-[10%] text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300  rounded-lg  md:text-l h-full py-3 text-center font-semibold dark:bg-[#ffa31a] dark:text-black dark:hover:bg-[#ff7d12] flex justify-center"
+            onClick={()=>setClickSearch(!clickSearch)}>
+              <Search />
+            </button>
+  </div>
+ 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-stretch items-stretch p-2 mt-2">
-      <ProfileModal profile={Profile} loading={LoadingProfile}/>
-      <RoleModal profile={Profile} setTrigger={setTrigger} trigger={trigger} load={LoadingProfile}/>
       {mapUsers}
     </div>
+  </>
     )
 
 }

@@ -13,6 +13,7 @@ const PraktikanScore = () => {
     
 
     if (isLoading) return <Loading/>
+    if (!nilai) return <p className="text-center">{`Not Scored`}</p>
     
     const dataMap = [...Array(10)].map((_, idx) => {
         
@@ -20,7 +21,7 @@ const PraktikanScore = () => {
         
         const detailScorePraktikum = nilai[`praktikum${idx+1}`] as DetailScorePraktikum
         return (
-            <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md  w-full h-20 items-center font-semibold text-center text-sm md:text-base py-7 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]">
+            <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md  w-full h-20 items-center font-semibold text-center text-sm md:text-base py-7 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]">
                 <p className="w-[15%]">{`E-${idx+1}`}</p>
                 <p className="w-[30%]">{JudulPraktikum(idx)}</p>
                 <p className="w-[35%]" onClick={()=>{

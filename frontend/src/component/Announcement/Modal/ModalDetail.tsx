@@ -34,8 +34,8 @@ const ModalDetail = ({selectedList, trigger, setTrigger}: ModalDetailProps) => {
 <dialog id="ModalDetailAnnouncement" className="modal w-screen">
     <div className="modal-box">
         <div className="flex flex-col w-full ">
-            <p className="text-2xl font-bold text-left pb-7 uppercase">{selectedList.title}</p>
-            <div className="rounded-md border border-gray-400 shadow-sm w-1/4 text-center p-1 mb-3">
+            <p className="text-2xl font-bold text-left pb-7 uppercase dark:text-white">{selectedList.title}</p>
+            <div className="rounded-md border border-gray-400 dark:border-[#ffa31a] dark:text-[#ffa31a] shadow-sm w-1/4 text-center p-1 mb-3">
                 {selectedList.judul} 
             </div>
             <p className="text-justify pt-3">

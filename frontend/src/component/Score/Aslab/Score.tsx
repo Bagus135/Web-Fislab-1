@@ -125,7 +125,7 @@ const ListCard = ({detail, SelectPraktikan, GetProfile}:ListCardProp) =>{
               {detail.nilaiTotal === null ? 
                 <p className="text-sm md:text-base ">Not Scored</p> 
                 : 
-                <p className="" onClick={() =>{
+                <p className="dark:text-white" onClick={() =>{
                   SelectPraktikan(detail);
                   (document.getElementById(`ModalDetailScoring`) as HTMLDialogElement).showModal()}}>
                     {detail.nilaiTotal}

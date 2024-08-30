@@ -212,14 +212,14 @@ export const addPraktikanGroupMember =  async(req:Request, res:Response) =>{
 export const deletePraktikanGroupMember = async (req : Request, res : Response) =>{
     try {
         const {uid} = req.params;
+        const deleteUserNilai = await prisma.nilai.delete({
+           where : {
+               userID : uid
+           }
+        })
         const deleteuser = await prisma.kelompok.delete({
             where:{
                 userId : uid
-            }
-         })
-         const deleteUserNilai = await prisma.nilai.delete({
-            where : {
-                userID : uid
             }
          })
         if(!deleteuser||! deleteUserNilai) return res.status(409).json({error : `Cannot deleted data`})

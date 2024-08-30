@@ -34,7 +34,7 @@ function Login(){
                     </span> 
                     <input  name="nrp" 
                             id="email" 
-                            className="pl-12 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#292929]" 
+                            className="pl-12 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#292929] dark:text-[#ffa31a]" 
                             placeholder="5001221060"
                             value={input.nrp}
                             onChange={(e)=> setInput({...input, nrp : e.target.value })}/>
@@ -51,7 +51,7 @@ function Login(){
                             name="password" 
                             id="password" 
                             placeholder="••••••••••"
-                            className="pl-12 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#292929] dark:border-[#292929]"   
+                            className="pl-12 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 dark:bg-[#292929] dark:border-[#292929] dark:text-[#ffa31a]"   
                             aria-autocomplete="list"
                             autoComplete="on"
                             value={input.password}
@@ -60,7 +60,7 @@ function Login(){
             </div>
             
             <button type="submit" 
-                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300  rounded-lg text-sm px-5  md:text-l py-2.5 text-center mb-1 font-semibold uppercase dark:bg-[#ffa31a] dark:text-[#1b1b1b] ${isLoading? "btn btn-disabled" : ''}`}
+                    className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300  rounded-lg px-5  md:text-l py-2.5 text-center mb-1 font-semibold dark:bg-[#ffa31a] dark:text-black dark:hover:bg-[#ff7d12] ${isLoading? "btn btn-disabled" : ''}`}
                     disabled = {isLoading}> {isLoading? <div className="loading loading-spinner"/> : "Login"}</button>
 
             <div className="pb-2 flex flex-row">
