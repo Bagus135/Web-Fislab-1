@@ -194,14 +194,14 @@ export const addPraktikanGroupMember = async (req, res) => {
 export const deletePraktikanGroupMember = async (req, res) => {
     try {
         const { uid } = req.params;
-        const deleteuser = await prisma.kelompok.delete({
-            where: {
-                userId: uid
-            }
-        });
         const deleteUserNilai = await prisma.nilai.delete({
             where: {
                 userID: uid
+            }
+        });
+        const deleteuser = await prisma.kelompok.delete({
+            where: {
+                userId: uid
             }
         });
         if (!deleteuser || !deleteUserNilai)
