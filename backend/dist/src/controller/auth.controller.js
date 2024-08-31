@@ -92,7 +92,7 @@ export const logout = async (req, res) => {
         res.clearCookie('jwt', {
             httpOnly : true,
             secure : true,
-            sameSite : 'lax',
+            sameSite : 'none',
             domain : 'web-fislab-1.vercel.app',
             path : '/'
         });
