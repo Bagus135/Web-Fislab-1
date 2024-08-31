@@ -37,7 +37,7 @@ const AslabModul = () => {
     }
 
     const handleSelectJudul = (e : any) =>{
-        const Judul = ['Pengenalan Alat Ukur', `Node and Mesh`, `Rangkaian Thevenin Norton`, `Karakteristik Dioda`, `Transistor Dwi Kutub`, `Rangkaian Non Linear`, `Op-Amp sebagai Penguat Sinyal`, `OPM`, `Rangkaian Filter Pasif`, `RLC`];
+        const Judul = ['Pengenalan Alat Ukur', "Transformasi Wye-Delta", 'Node and Mesh', 'Thevenin dan Norton', 'Karakteristik Dioda', 'Transistor Dwi Kutub', 'Gejala Transient pada Rangkaian Non-Linear', 'Op-Amp Sebagai Penguat Sinyal', 'Pengolahan Sinyal Analog Menggunakan Op-Amp', 'Rangkaian Filter Pasif'];
 
         setValue({...value,  noJudul : Number(e.target.value), kodeJudul : `E-${e.target.value}`, Judul : Judul[Number(e.target.value)-1]})
     } 
