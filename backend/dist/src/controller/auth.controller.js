@@ -93,8 +93,7 @@ export const logout = async (req, res) => {
         httpOnly : true,
         secure : true,
         sameSite : 'strict',
-        domain : '.vercel.app',
-        path : '/',
+        domain : 'web-fislab-1.vercel.app',
         });
         res.status(200).json({ message: "Logged Out Succesfully" });
     }

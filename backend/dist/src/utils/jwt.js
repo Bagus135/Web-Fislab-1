@@ -6,8 +6,7 @@ const generateToken = (userId, res) => {
         httpOnly : true,
         secure : true,
         sameSite : 'strict',
-        domain : '.vercel.app',
-        path : '/',
+        domain : 'web-fislab-1.vercel.app',
     });
 };
 export default generateToken;
