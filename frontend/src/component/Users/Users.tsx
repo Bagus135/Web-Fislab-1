@@ -11,8 +11,8 @@ const AllUsers = () => {
   const {isLoading, users, setTrigger, trigger} = useGetUsers()
   const {authUser} = useAuthContext()
   const {Profile, getProfile, isLoading:LoadingProfile} =useGetProfile()
-  const [searchNRP , setSearchNRP] = useState<string|null>(null)
-  const [clickSearch, setClickSearch] = useState<boolean>(false)
+  const [searchNRP , setSearchNRP] = useState<string>('')
+  const [clickSearch, setClickSearch] = useState<boolean>(true)
 
   if(isLoading || !users) return <Loading/>
   
