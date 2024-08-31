@@ -92,7 +92,9 @@ export const logout = async (req, res) => {
         res.clearCookie('jwt', {
         httpOnly : true,
         secure : true,
-        sameSite : 'none',
+        sameSite : 'strict',
+        domain : '.vercel.app',
+        path : '/',
         });
         res.status(200).json({ message: "Logged Out Succesfully" });
     }
