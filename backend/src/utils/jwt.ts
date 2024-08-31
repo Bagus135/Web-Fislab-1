@@ -8,6 +8,7 @@ const generateToken = (userId :string , res : Response) =>{
         httpOnly : true,
         secure : true,
         sameSite : 'none',
+
     })
     
 }

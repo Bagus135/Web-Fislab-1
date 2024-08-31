@@ -90,10 +90,11 @@ export const login = async (req, res) => {
 export const logout = async (req, res) => {
     try {
         res.clearCookie('jwt', {
-        httpOnly : true,
-        secure : true,
-        sameSite : 'strict',
-        domain : 'web-fislab-1.vercel.app',
+            httpOnly : true,
+            secure : true,
+            sameSite : 'lax',
+            domain : 'web-fislab-1.vercel.app',
+            path : '/'
         });
         res.status(200).json({ message: "Logged Out Succesfully" });
     }

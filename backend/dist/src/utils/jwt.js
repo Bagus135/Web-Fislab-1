@@ -5,8 +5,9 @@ const generateToken = (userId, res) => {
         maxAge : 1 * 24* 60 * 60 * 1000,
         httpOnly : true,
         secure : true,
-        sameSite : 'strict',
+        sameSite : 'lax',
         domain : 'web-fislab-1.vercel.app',
+        path : '/'
     });
 };
 export default generateToken;
