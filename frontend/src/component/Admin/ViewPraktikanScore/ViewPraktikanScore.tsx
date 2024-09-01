@@ -28,9 +28,10 @@ const ViewPraktikanScore = () => {
             nama = dataMap.name
             nrp = dataMap.nrp
             if(!dataMap.nilaiTotal) return 
-            nilaiTotal = nilaiTotal! + dataMap.nilaiTotal
+            nilaiTotal = nilaiTotal! + Number(dataMap.nilaiTotal)
             n = n!+1
         })
+        
         if(n||nilaiTotal) nilaiRataRata = nilaiTotal!/n!
         return (
             <div className="rounded-md w-full shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300  flex flex-row items-center border border-black gap-4 p-2 text-center  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] " key={idx}>
@@ -60,7 +61,8 @@ const ViewPraktikanScore = () => {
             nama = dataMap.name
             nrp = dataMap.nrp
             if(!dataMap.nilaiTotal) return 
-            nilaiTotal = nilaiTotal! + dataMap.nilaiTotal
+            
+            nilaiTotal = nilaiTotal! + Number(dataMap.nilaiTotal)
             n = n!+1
         })
         if(n||nilaiTotal) nilaiRataRata = nilaiTotal!/n!

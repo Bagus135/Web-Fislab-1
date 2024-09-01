@@ -69,15 +69,15 @@ model Praktikum1{
   name String
   noJudul Int @default(1)
   nrp String
-  PreLab Int?
-  InLab Int?
-  Abstrak Int?
-  Pendahuluan Int?
-  Metodologi Int?
-  Pembahasan Int?
-  Kesimpulan Int?
-  Format Int? 
-  nilaiTotal Int?
+  PreLab  Decimal? @db.Decimal(5,2)
+  InLab Decimal? @db.Decimal(5,2)
+  Abstrak Decimal? @db.Decimal(5,2)
+  Pendahuluan Decimal? @db.Decimal(5,2)
+  Metodologi Decimal? @db.Decimal(5,2)
+  Pembahasan Decimal? @db.Decimal(5,2)
+  Kesimpulan Decimal? @db.Decimal(5,2)
+  Format Decimal? @db.Decimal(5,2) 
+  nilaiTotal Decimal? @db.Decimal(5,2)
   comment String?
 
   praktikum Nilai @relation(fields: [userId], references: [userID])
@@ -91,15 +91,15 @@ model Praktikum2{
   name String
   noJudul Int @default(2)
   nrp String
-  PreLab Int?
-  InLab Int?
-  Abstrak Int?
-  Pendahuluan Int?
-  Metodologi Int?
-  Pembahasan Int?
-  Kesimpulan Int?
-  Format Int? 
-  nilaiTotal Int?
+  PreLab Decimal? @db.Decimal(5,2)
+  InLab Decimal? @db.Decimal(5,2)
+  Abstrak Decimal? @db.Decimal(5,2)
+  Pendahuluan Decimal? @db.Decimal(5,2)
+  Metodologi Decimal? @db.Decimal(5,2)
+  Pembahasan Decimal? @db.Decimal(5,2)
+  Kesimpulan Decimal? @db.Decimal(5,2)
+  Format Decimal? @db.Decimal(5,2) 
+  nilaiTotal Decimal? @db.Decimal(5,2)
   comment String?
 
   praktikum Nilai @relation(fields: [userId], references: [userID])
@@ -113,15 +113,15 @@ model Praktikum3{
   name String
   noJudul Int @default(3)
   nrp String
-  PreLab Int?
-  InLab Int?
-  Abstrak Int?
-  Pendahuluan Int?
-  Metodologi Int?
-  Pembahasan Int?
-  Kesimpulan Int?
-  Format Int? 
-  nilaiTotal Int?
+  PreLab Decimal? @db.Decimal(5,2)
+  InLab Decimal? @db.Decimal(5,2)
+  Abstrak Decimal? @db.Decimal(5,2)
+  Pendahuluan Decimal? @db.Decimal(5,2)
+  Metodologi Decimal? @db.Decimal(5,2)
+  Pembahasan Decimal? @db.Decimal(5,2)
+  Kesimpulan Decimal? @db.Decimal(5,2)
+  Format Decimal? @db.Decimal(5,2) 
+  nilaiTotal Decimal? @db.Decimal(5,2)
   comment String?
   
   praktikum Nilai @relation(fields: [userId], references: [userID])
@@ -135,15 +135,15 @@ model Praktikum4{
   name String
   noJudul Int @default(4)
   nrp String
-  PreLab Int?
-  InLab Int?
-  Abstrak Int?
-  Pendahuluan Int?
-  Metodologi Int?
-  Pembahasan Int?
-  Kesimpulan Int?
-  Format Int? 
-  nilaiTotal Int?
+  PreLab Decimal? @db.Decimal(5,2)
+  InLab Decimal? @db.Decimal(5,2)
+  Abstrak Decimal? @db.Decimal(5,2)
+  Pendahuluan Decimal? @db.Decimal(5,2)
+  Metodologi Decimal? @db.Decimal(5,2)
+  Pembahasan Decimal? @db.Decimal(5,2)
+  Kesimpulan Decimal? @db.Decimal(5,2)
+  Format Decimal? @db.Decimal(5,2) 
+  nilaiTotal Decimal? @db.Decimal(5,2)
   comment String?
 
   praktikum Nilai @relation(fields: [userId], references: [userID])
@@ -157,15 +157,15 @@ model Praktikum5{
   name String
   noJudul Int @default(5)
   nrp String
-  PreLab Int?
-  InLab Int?
-  Abstrak Int?
-  Pendahuluan Int?
-  Metodologi Int?
-  Pembahasan Int?
-  Kesimpulan Int?
-  Format Int? 
-  nilaiTotal Int?
+  PreLab Decimal? @db.Decimal(5,2)
+  InLab Decimal? @db.Decimal(5,2)
+  Abstrak Decimal? @db.Decimal(5,2)
+  Pendahuluan Decimal? @db.Decimal(5,2)
+  Metodologi Decimal? @db.Decimal(5,2)
+  Pembahasan Decimal? @db.Decimal(5,2)
+  Kesimpulan Decimal? @db.Decimal(5,2)
+  Format Decimal? @db.Decimal(5,2) 
+  nilaiTotal Decimal? @db.Decimal(5,2)
   comment String?
   
   praktikum Nilai @relation(fields: [userId], references: [userID])
@@ -179,15 +179,15 @@ model Praktikum6{
   name String
   noJudul Int @default(6)
   nrp String
-  PreLab Int?
-  InLab Int?
-  Abstrak Int?
-  Pendahuluan Int?
-  Metodologi Int?
-  Pembahasan Int?
-  Kesimpulan Int?
-  Format Int? 
-  nilaiTotal Int?
+  PreLab Decimal? @db.Decimal(5,2)
+  InLab Decimal? @db.Decimal(5,2)
+  Abstrak Decimal? @db.Decimal(5,2)
+  Pendahuluan Decimal? @db.Decimal(5,2)
+  Metodologi Decimal? @db.Decimal(5,2)
+  Pembahasan Decimal? @db.Decimal(5,2)
+  Kesimpulan Decimal? @db.Decimal(5,2)
+  Format Decimal? @db.Decimal(5,2) 
+  nilaiTotal Decimal? @db.Decimal(5,2)
   comment String?
   
   praktikum Nilai @relation(fields: [userId], references: [userID])
@@ -201,15 +201,15 @@ model Praktikum7{
   name String
   noJudul Int @default(7)
   nrp String
-  PreLab Int?
-  InLab Int?
-  Abstrak Int?
-  Pendahuluan Int?
-  Metodologi Int?
-  Pembahasan Int?
-  Kesimpulan Int?
-  Format Int? 
-  nilaiTotal Int?
+  PreLab Decimal? @db.Decimal(5,2)
+  InLab Decimal? @db.Decimal(5,2)
+  Abstrak Decimal? @db.Decimal(5,2)
+  Pendahuluan Decimal? @db.Decimal(5,2)
+  Metodologi Decimal? @db.Decimal(5,2)
+  Pembahasan Decimal? @db.Decimal(5,2)
+  Kesimpulan Decimal? @db.Decimal(5,2)
+  Format Decimal? @db.Decimal(5,2) 
+  nilaiTotal Decimal? @db.Decimal(5,2)
   comment String?
   
   praktikum Nilai @relation(fields: [userId], references: [userID])
@@ -223,15 +223,15 @@ model Praktikum8{
   name String
   noJudul Int @default(8)
   nrp String
-  PreLab Int?
-  InLab Int?
-  Abstrak Int?
-  Pendahuluan Int?
-  Metodologi Int?
-  Pembahasan Int?
-  Kesimpulan Int?
-  Format Int? 
-  nilaiTotal Int?
+  PreLab Decimal? @db.Decimal(5,2)
+  InLab Decimal? @db.Decimal(5,2)
+  Abstrak Decimal? @db.Decimal(5,2)
+  Pendahuluan Decimal? @db.Decimal(5,2)
+  Metodologi Decimal? @db.Decimal(5,2)
+  Pembahasan Decimal? @db.Decimal(5,2)
+  Kesimpulan Decimal? @db.Decimal(5,2)
+  Format Decimal? @db.Decimal(5,2) 
+  nilaiTotal Decimal? @db.Decimal(5,2)
   comment String?
   
   praktikum Nilai @relation(fields: [userId], references: [userID])
@@ -245,15 +245,15 @@ model Praktikum9{
   name String
   noJudul Int @default(9)
   nrp String
-  PreLab Int?
-  InLab Int?
-  Abstrak Int?
-  Pendahuluan Int?
-  Metodologi Int?
-  Pembahasan Int?
-  Kesimpulan Int?
-  Format Int? 
-  nilaiTotal Int?
+  PreLab Decimal? @db.Decimal(5,2)
+  InLab Decimal? @db.Decimal(5,2)
+  Abstrak Decimal? @db.Decimal(5,2)
+  Pendahuluan Decimal? @db.Decimal(5,2)
+  Metodologi Decimal? @db.Decimal(5,2)
+  Pembahasan Decimal? @db.Decimal(5,2)
+  Kesimpulan Decimal? @db.Decimal(5,2)
+  Format Decimal? @db.Decimal(5,2) 
+  nilaiTotal Decimal? @db.Decimal(5,2)
   comment String?
   
   praktikum Nilai @relation(fields: [userId], references: [userID])
@@ -267,15 +267,15 @@ model Praktikum10{
   name String
   noJudul Int @default(10)
   nrp String
-  PreLab Int?
-  InLab Int?
-  Abstrak Int?
-  Pendahuluan Int?
-  Metodologi Int?
-  Pembahasan Int?
-  Kesimpulan Int?
-  Format Int? 
-  nilaiTotal Int?
+  PreLab Decimal? @db.Decimal(5,2)
+  InLab Decimal? @db.Decimal(5,2)
+  Abstrak Decimal? @db.Decimal(5,2)
+  Pendahuluan Decimal? @db.Decimal(5,2)
+  Metodologi Decimal? @db.Decimal(5,2)
+  Pembahasan Decimal? @db.Decimal(5,2)
+  Kesimpulan Decimal? @db.Decimal(5,2)
+  Format Decimal? @db.Decimal(5,2) 
+  nilaiTotal Decimal? @db.Decimal(5,2)
   comment String?
   
   praktikum Nilai @relation(fields: [userId], references: [userID])
@@ -334,7 +334,7 @@ model Info{
 
 model finalscore{
     userId String @unique
-    totalscore Int? 
+    totalscore Decimal? @db.Decimal(5,2) 
     kelompokId  Int 
     nrp String
     name  String

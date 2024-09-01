@@ -68,6 +68,8 @@ export const editScore = async (req : Request, res : Response) =>{
         const {uid : idPraktikan, idKel : kelompokId} = req.params;
    
         const {noJudul, PreLab, InLab, Abstrak, Pendahuluan, Metodologi, Pembahasan, Kesimpulan, Format, nilaiTotal, comment} = req.body;
+
+        
          
         if(!noJudul) return res.status(422).json({error: `Fill All Fields`})
 

@@ -16,7 +16,8 @@ const StatCard = () => {
         kelompokId = detailScorePraktikum.kelompokId
 
         if(!nilai[`praktikum${idx+1}`].nilaiTotal) return null
-        NilaiTotal = NilaiTotal! + detailScorePraktikum.nilaiTotal!
+        NilaiTotal = NilaiTotal! + Number(detailScorePraktikum.nilaiTotal!)
+        console.log(NilaiTotal);
         nNilai = nNilai + 1
         return null
     })

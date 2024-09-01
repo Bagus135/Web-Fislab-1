@@ -95,7 +95,7 @@ export const ModalInputScore = ({detailScore, id, trigger, setTrigger}:{detailSc
         Format :undefined, 
         comment : undefined,
 })
-    
+
     const {editScore,isLoading} = useEditScore()
     if(!detailScore) return (
         <dialog id={id} className="modal w-screen ">
@@ -117,7 +117,7 @@ export const ModalInputScore = ({detailScore, id, trigger, setTrigger}:{detailSc
         if(0 > newValue.PreLab || newValue.PreLab > 30) return toast.error(`Nilai Prelab Berkisar 0-30`)
         if(0 > newValue.InLab || newValue.InLab > 10) return toast.error(`Nilai Inlab Berkisar 0-10`)
         if(0 > newValue.Abstrak || newValue.Abstrak > 5) return toast.error(`Nilai Abstrak Berkisar 0-5`)
-        if(0 > newValue.Pendahuluan || newValue.Pendahuluan > 10) return toast.error(`Nilai Pe.Pendahuluan Berkisar 0-10`)
+        if(0 > newValue.Pendahuluan || newValue.Pendahuluan > 10) return toast.error(`Nilai Pendahuluan Berkisar 0-10`)
         if(0 > newValue.Metodologi || newValue.Metodologi > 5) return toast.error(`Nilai Metodologi Berkisar 0-5`)
         if(0 > newValue.Pembahasan || newValue.Pembahasan > 30) return toast.error(`Nilai Pembahasan Berkisar 0-30`)
         if(0 > newValue.Kesimpulan || newValue.Kesimpulan > 5) return toast.error(`Nilai Kesimpulan Berkisar 0-5`)
