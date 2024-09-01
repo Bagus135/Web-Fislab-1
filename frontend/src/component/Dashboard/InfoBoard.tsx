@@ -22,7 +22,7 @@ const InfoBoard = () => {
     if (!Announcement[idx]) return null
     const data = Announcement[idx]
       return (
-        <div className="flex flex-row max-w-full max-h-40 overflow-hidden items-center pl-2 hover:bg-gray-200 rounded-sm hover:scale-95 duration-300 dark:hover:bg-[#808080] dark:hover:text-black"  onClick={() => {
+        <div key={idx} className="flex flex-row max-w-full max-h-40 overflow-hidden items-center pl-2 hover:bg-gray-200 rounded-sm hover:scale-95 duration-300 dark:hover:bg-[#808080] dark:hover:text-black"  onClick={() => {
           setSelectedList(data);
           (document.getElementById('ModalDetailAnnouncement') as HTMLDialogElement).showModal()!}}>
 
