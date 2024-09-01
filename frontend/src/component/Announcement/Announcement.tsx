@@ -1,4 +1,4 @@
-import { ChevronRight, PlusSquare } from "lucide-react"
+import { ChevronRight, Megaphone, PlusSquare } from "lucide-react"
 import useGetAnnouncement from "./useGetAnnouncement"
 import ModalAdd from "./Modal/ModalAdd"
 import { useAuthContext } from "../../context/AuthContext"
@@ -20,8 +20,7 @@ const Announcement = () => {
             setSelectedList(val);
             (document.getElementById('ModalDetailAnnouncement') as HTMLDialogElement).showModal()!}}
         className=" hover:bg-gray-200 hover:rounded-sm dark:hover:bg-[#808080] dark:hover:text-black hover:px-0 flex flex-row max-w-full max-h-40 overflow-hidden items-center px-2">
-            <img src="/toa.png" alt="Icon" className="w-[12%] max-w-14 flex items-center justify-center" />
-            
+            <Megaphone className="size-10 md:size-14 text-black dark:text-white -rotate-12"/>
             <div className="flex flex-col mr-3 ml-3 md:ml-5 w-full pl-2 text-justify">
                 <div className="font-bold text-l text-left line-clamp-1 w-full md:text-xl dark:text-[#ffa31a] ">
                     {val.title}

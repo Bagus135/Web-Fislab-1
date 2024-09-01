@@ -41,8 +41,15 @@ export const ModalEditProfile =({authUser, editProfile,loading}:ModalEditProfile
     }
 
     const handleSubmit = async() =>{
-        if(!value.description||!value.nickname||!value.profilPic) return toast.error(`Please fill all input`)
+        if(!authUser?.profilPic){
+            if(!value.description||!value.nickname||!value.profilPic) return toast.error(`Please fill all input`)
+        } 
+        else {
+            if(!value.description||!value.nickname) return toast.error(`Please fill all input`)
+        }
+
         await editProfile(authUser, value);
+        
         (document.getElementById(`ModalEditProfile`) as HTMLDialogElement).close()
     }
 
@@ -150,9 +157,9 @@ export const ModalChangePassword = ({authUser}:{ authUser : AuthUserTypes|null,}
         <div className="flex flex-col gap-2">
             <div className="text-center font-bold text-2xl pb-5 dark:text-white"> Change Password</div>
           
-           <InputComponent title="Password" placeholder="*******"  value={value.pass!} setValue={(e)=> setValue({...value, pass : e.target.value})} type="text"/>
+           <InputComponent title="Password" placeholder="*******"  value={value.pass!} setValue={(e)=> setValue({...value, pass : e.target.value})} type="password"/>
 
-           <InputComponent title="New Password" placeholder="New Password" value={value.newPass!} setValue={(e)=> setValue({...value, newPass : e.target.value})} type="text"/>
+           <InputComponent title="New Password" placeholder="New Password" value={value.newPass!} setValue={(e)=> setValue({...value, newPass : e.target.value})} type="password"/>
 
            <button type="button" 
                     onClick={handleSubmit}

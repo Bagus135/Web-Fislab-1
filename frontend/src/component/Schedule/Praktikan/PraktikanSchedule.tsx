@@ -12,7 +12,7 @@ const SchedulePraktikan = () => {
 
     const scheduleMap = schedule.map((val : PraktikanSchedule, idx:number)=>{
       return(
-        <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md text-black w-full h-20 items-center font-semibold text-center text-sm md:text-base py-7 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] ">
+        <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md text-black w-full  items-center font-semibold text-center text-sm md:text-base py-5 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-white">
           <p className="w-[15%]">{val.week}</p>
           <p className="w-[25%]">{JudulPraktikum(val.JudulAslab.noJudul-1)}</p>
           <p className="w-[25%]" onClick={()=>{
@@ -26,7 +26,7 @@ const SchedulePraktikan = () => {
                 <span className="text-center">{`Not Scheduled`}</span>
               :
               <>
-                <span className="">{`${val.Schedule?.date}`}</span>
+                <span className="dark:text-[#ffa31a]">{`${val.Schedule?.date}`}</span>
                 <span className="font-normal">{`${val.Schedule?.hour}`}</span>
               </>
             }

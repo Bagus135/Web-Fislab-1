@@ -112,7 +112,7 @@ interface ListCardProp{
 const ListCard = ({detail, SelectPraktikan, GetProfile}:ListCardProp) =>{
   return(
     <>
-    <div className="flex flex-row justify-between items-center rounded-md border border-black mt-2 h-12 p-2 hover:bg-gray-200 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]">
+    <div className="flex flex-row justify-between items-center rounded-md border border-black mt-2 px-2 hover:bg-gray-200 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]">
       <div className="flex flex-row justify-between w-11/12 pr-2 items-center py-2">
         <div className="flex flex-col w-full"  onClick={()=>{
           GetProfile(detail.userId);

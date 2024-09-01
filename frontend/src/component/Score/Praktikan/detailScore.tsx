@@ -24,11 +24,11 @@ const DetailScoreModal = ({detailScore} : { detailScore : DetailScorePraktikum|n
     <dialog id={`ModalDetailScore`} className="modal w-screen ">
       <div className="modal-box">
           <div className="flex flex-col text-center">
-              <h3 className="font-bold text-lg">{`E-${detailScore?.noJudul}`}</h3>
+              <h3 className="font-bold text-lg dark:text-[#ffa31a]">{`E-${detailScore?.noJudul}`}</h3>
               <p className="">{detailScore.aslab}</p>
           </div>
           <div className="flex flex-col text-center">
-              <h3 className="font-bold text-lg py-4">Detail Score</h3>
+              <h3 className="font-bold text-lg py-5 dark:text-white">Detail Score</h3>
           </div>
           <ComponentListScore title="PreLab" value={detailScore.PreLab}/>
           <ComponentListScore title="InLab" value={detailScore.InLab}/>
@@ -39,14 +39,14 @@ const DetailScoreModal = ({detailScore} : { detailScore : DetailScorePraktikum|n
           <ComponentListScore title="Kesimpulan" value={detailScore.Kesimpulan}/>
           <ComponentListScore title="Format" value={detailScore.Format}/>
           <div className="flex flex-row justify-between py-1">
-              <p className="font-bold">Total Score</p>
-              <p className="font-bold">{detailScore.nilaiTotal}</p>
+              <p className="font-bold dark:text-[#ffa31a]">Total Score</p>
+              <p className="font-bold dark:text-[#ffa31a]">{detailScore.nilaiTotal}</p>
           </div>
       
           
           <div className="flex flex-col">
-              <h3 className="font-bold text-center mt-3">Comment</h3>
-             <div className="bg-gray-200 border-2 border-gray-400 rounded-sm p-2">
+              <h3 className="font-bold text-center mt-5 dark:text-white">Comment</h3>
+             <div className="bg-gray-200 border mt-1 border-gray-400 rounded-sm p-2 dark:bg-[#1b1b1b] dark:border-[#808080]">
                {detailScore.comment}
              </div>
           </div>

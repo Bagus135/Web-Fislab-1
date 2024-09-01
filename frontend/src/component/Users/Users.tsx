@@ -59,17 +59,17 @@ const AllUsers = () => {
   <ProfileModal profile={Profile} loading={LoadingProfile}/>
   <RoleModal profile={Profile} setTrigger={setTrigger} trigger={trigger} load={LoadingProfile}/>
   <div className="flex flex-row gap-3 p-2 items-center">
-      <div className="rounded-md  mt-3 mr-10 w-[90%] overflow-hidden">
+      <div className="rounded-md  mt-3  w-[80%] md:w-[85%] overflow-hidden">
                 <div className="relative text-gray-400 ">
                     <input type="text"
                             className={`${clickSearch? 'translate-x-full': ''}  transform transition-transform ease-in duration-500 pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent  block w-full rounded-l-lg py-3 px-2 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]`} 
-                            placeholder="desc"
+                            placeholder="NRP"
                             disabled={clickSearch}
                             value={searchNRP!}
                             onChange={(e)=> setSearchNRP(e.target.value)}/>
                 </div>
             </div>
-            <button className="w-[10%] text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300  rounded-lg  md:text-l h-full py-3 text-center font-semibold dark:bg-[#ffa31a] dark:text-black dark:hover:bg-[#ff7d12] flex justify-center"
+            <button className="w-[20%] md:[w-15%] text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300  rounded-lg  md:text-l h-full py-3 text-center font-semibold dark:bg-[#ffa31a] dark:text-black dark:hover:bg-[#ff7d12] flex justify-center"
             onClick={()=>setClickSearch(!clickSearch)}>
               <Search />
             </button>

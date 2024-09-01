@@ -21,7 +21,7 @@ const PraktikanScore = () => {
         
         const detailScorePraktikum = nilai[`praktikum${idx+1}`] as DetailScorePraktikum
         return (
-            <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md  w-full h-20 items-center font-semibold text-center text-sm md:text-base py-7 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]">
+            <div key={idx} className="flex flex-row justify-around bg-white border-2 border-black shadow-md  rounded-md  w-full items-center font-semibold text-center text-sm md:text-base py-5 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]">
                 <p className="w-[15%]">{`E-${idx+1}`}</p>
                 <p className="w-[30%]">{JudulPraktikum(idx)}</p>
                 <p className="w-[35%]" onClick={()=>{
@@ -36,7 +36,7 @@ const PraktikanScore = () => {
                         <span className="text-center">{`Not Scored`}</span>
                     :
                     <>
-                        <span className="" onClick={()=>{
+                        <span className="dark:text-[#ffa31a]" onClick={()=>{
                                 setDetailScore(detailScorePraktikum); 
                                 (document.getElementById('ModalDetailScore') as HTMLDialogElement).showModal()! 
                             }}>{`${detailScorePraktikum.nilaiTotal}`}</span>

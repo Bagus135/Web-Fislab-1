@@ -1,4 +1,4 @@
-import { Pin } from "lucide-react"
+import { Megaphone, Pin } from "lucide-react"
 import useGetAnnouncement from "../Announcement/useGetAnnouncement"
 import ModalDetail from "../Announcement/Modal/ModalDetail";
 import { useState } from "react";
@@ -22,11 +22,11 @@ const InfoBoard = () => {
     if (!Announcement[idx]) return null
     const data = Announcement[idx]
       return (
-        <div key={idx} className="flex flex-row max-w-full max-h-40 overflow-hidden items-center pl-2 hover:bg-gray-200 rounded-sm hover:scale-95 duration-300 dark:hover:bg-[#808080] dark:hover:text-black"  onClick={() => {
+        <div key={idx} className="flex flex-row max-w-full max-h-40 overflow-hidden items-center hover:bg-gray-200 rounded-sm hover:scale-95 duration-300 dark:hover:bg-[#808080] dark:hover:text-black"  onClick={() => {
           setSelectedList(data);
           (document.getElementById('ModalDetailAnnouncement') as HTMLDialogElement).showModal()!}}>
 
-        <img src="/toa.png" alt="Icon" className="w-[12%] max-w-14 flex items-center justify-center" />
+          <Megaphone className="size-10 md:size-14 text-black dark:text-white -rotate-12"/>
        
         <div className="flex flex-col mr-2 ml-3 md:ml-5 w-full pl-2 text-justify">
           <div className="font-bold text-l text-left line-clamp-1 w-full md:text-xl dark:text-[#ffa31a]">{data.title}</div>
