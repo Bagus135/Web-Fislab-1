@@ -64,8 +64,7 @@ const Navbar = () => {
       const localTheme = localStorage.getItem("theme");
       
       if(localTheme === "light")  document.documentElement.classList.remove("dark")
-      else  document.documentElement.classList.add("dark")
-
+      else document.documentElement.classList.add("dark")
       document.documentElement.setAttribute('data-theme',localTheme!)
     },[theme])
 

@@ -3,11 +3,11 @@ import { useAuthContext } from "../../context/AuthContext";
 const TimeGreeting = () => {
   const {authUser} = useAuthContext()
 
-  const componentGreeting = greetTime()
-  let randomInt = Math.floor(Math.random()*4)
-  let randomInt2 = Math.floor(Math.random()*(componentGreeting.female.length-1))
-  if(randomInt >= 4) return randomInt = 0;
-  if(randomInt2 >= componentGreeting.female.length-1) return randomInt2 = 0;
+  const greeting = greetTime()
+  let randomInt = Math.floor(Math.random()*greeting.pic.length)
+  let randomInt2 = Math.floor(Math.random()*(greeting.female.length))
+  if(randomInt > greeting.pic.length) return randomInt = 0;
+  if(randomInt2 > greeting.female.length) return randomInt2 = 0;
 
 
   return (
@@ -15,18 +15,18 @@ const TimeGreeting = () => {
     <div className="flex flex-row">
       <img
       alt="time"
-        src={componentGreeting.pic[randomInt]}
+        src={greeting.pic[randomInt]}
         className="h-40 z-0 w-40 items-stretch rounded-lg shadow-2xl md:w-56 md:h-56 m-2 lg:h-72 lg:w-72" />
       <div className="flex flex-col pl-2 md:pl-10 ">
         <div className="flex flex-col md:flex-row text-xl font-bold md:text-3xl lg:text-4xl dark:text-white">
-          <h1 className="top-6  md:mr-4">Good {componentGreeting.time}! </h1>
+          <h1 className="top-6  md:mr-4">Good {greeting.time}! </h1>
           <h1 className="text-lg md:text-3xl lg:text-4xl"> {`${authUser?.gender === 'female' ? `Dek` : `Mas`} ${authUser?.nickname || authUser?.fullname}`}</h1>
         </div>
           <p className="py-1 text-sm md:text-xl md:pt-2 lg:text-2xl"> {
             authUser?.gender === 'male' ?
-             componentGreeting.male[randomInt2]
+             greeting.male[randomInt2]
               : 
-            componentGreeting.female[randomInt2]
+            greeting.female[randomInt2]
             }</p>
       </div>
     </div>

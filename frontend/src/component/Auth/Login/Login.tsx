@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Lock, UserRound } from "lucide-react";
 import useLogin from "./useLogin";
 
@@ -19,7 +19,9 @@ function Login(){
 <div className=" w-screen mx-auto items-center p-4 justify-center flex flex-col">
     <div className="flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 rounded-2xl shadow-xl dark:bg-[#1b1b1b]">
         <div className="flex flex-col justify-center mx-auto items-center gap-3 pb-4">
-             <img src="/logofisika.png"  width="50" alt="Fisika ITS"/>
+           
+             <img src="/logofisika.png" className="visible dark:hidden" width="50" alt="Fisika ITS"/>
+             <img src="/whitephi.png" className="hidden dark:block"  width="50" alt="Fisika ITS"/>
              <h1 className="text-3xl font-bold text-black my-auto dark:text-white">LOGIN</h1>
         </div>
 
