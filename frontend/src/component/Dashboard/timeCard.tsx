@@ -8,7 +8,7 @@ const TimeCard = () => {
    
 
   return (
-    <div className={` ${greetTime().bg} bg-blue-950 flex flex-row justify-between items-center shadow-md rounded-sm m-4 p-2`}>
+    <div className={` ${greetTime().bg} flex flex-row justify-between items-center shadow-md rounded-sm m-4 p-2`}>
         <div className="flex flex-col text-left  text-white p-2">
             <div className="font-bold text-xl">{day[date.getDay()]}</div>
             <div className="font-medium">{`${date.getDate()} ${month[date.getMonth()]} ${date.getFullYear()}`}</div>

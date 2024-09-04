@@ -11,14 +11,14 @@ const AllUsers = () => {
   const {isLoading, users, setTrigger, trigger} = useGetUsers()
   const {authUser} = useAuthContext()
   const {Profile, getProfile, isLoading:LoadingProfile} =useGetProfile()
-  const [searchNRP , setSearchNRP] = useState<string>('')
+  const [search , setSearch] = useState<string>('')
   const [clickSearch, setClickSearch] = useState<boolean>(true)
 
   if(isLoading || !users) return <Loading/>
   
   let usersFilter = users;
   const role = ['Praktikan', "Aslab", "Admin", "Manipulator"]
-  if(searchNRP?.length !==0) usersFilter = usersFilter.filter(val => val.nrp === searchNRP)
+  if(search?.length !==0) usersFilter = usersFilter.filter(val => val.nrp.includes(search)|| val.fullname.toLowerCase().includes(search.toLowerCase()))
 
   const mapUsers = usersFilter?.map((val : AllUsers, idx : number)=>{
     return (
@@ -63,10 +63,10 @@ const AllUsers = () => {
                 <div className="relative text-gray-400 ">
                     <input type="text"
                             className={`${clickSearch? 'translate-x-full': ''}  transform transition-transform ease-in duration-500 pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent  block w-full rounded-l-lg py-3 px-2 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]`} 
-                            placeholder="NRP"
+                            placeholder="NRP / Fullname "
                             disabled={clickSearch}
-                            value={searchNRP!}
-                            onChange={(e)=> setSearchNRP(e.target.value)}/>
+                            value={search!}
+                            onChange={(e)=> setSearch(e.target.value)}/>
                 </div>
             </div>
             <button className="w-[20%] md:[w-15%] text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300  rounded-lg  md:text-l h-full py-3 text-center font-semibold dark:bg-[#ffa31a] dark:text-black dark:hover:bg-[#ff7d12] flex justify-center"

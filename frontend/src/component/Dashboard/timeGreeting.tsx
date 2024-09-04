@@ -43,28 +43,28 @@ const greetTime = () =>{
     return{
         time : 'Morning',
         pic : ['https://media1.tenor.com/m/pmY6lnm0ZjIAAAAC/good-morning.gif', 'https://media1.tenor.com/m/wGLyKHJv5lIAAAAC/fsdd.gif', 'https://media1.tenor.com/m/3eGagZJGpyIAAAAC/good-morning.gif', 'https://media1.tenor.com/m/rxVs-oSYohcAAAAC/morning-morning-sunshine.gif', 'https://media1.tenor.com/m/v4O7i-ox1dAAAAAC/happy-valentines-day-2024-happy-valentine%27s-day-2024.gif' ],
-        male : [`Semangat Mas Bro`, `Jangan Lupa Ngopi Slurr`, `Kerja Kerja Kerja`],
+        male : [`Semangat Mas Bro`, `Olahraga bro, kesehatan juga penting`, `Luangkan waktu untuk mewing🤫`],
         female :[`Apakah mimpimu tadi indah?`, `Semangat jalani hari😊`, `Jangan Lupa Sarapan Ya! Nanti Sakit loh:)`],
     };
   } else if (hour >=9 && hour <= 14){
     return{
       time : 'Day',
       pic : ['https://media1.tenor.com/m/pmY6lnm0ZjIAAAAC/good-morning.gif', 'https://media1.tenor.com/m/wGLyKHJv5lIAAAAC/fsdd.gif', 'https://media1.tenor.com/m/3eGagZJGpyIAAAAC/good-morning.gif', 'https://media1.tenor.com/m/rxVs-oSYohcAAAAC/morning-morning-sunshine.gif', 'https://media1.tenor.com/m/v4O7i-ox1dAAAAAC/happy-valentines-day-2024-happy-valentine%27s-day-2024.gif' ],
-      male : [`Istirahat Dulu Bang`, `No Ingpo`, `Kerusakan Sistem`],
-      female :[`Istrirahat dulu kalau capek`, `Kalau capek bisa tidur dipangkuanku`, `Jangan lupa makan siang ya :)`],
+      male : [`Istirahat Dulu Bang`, `Nothing last forever we can change the future`, `Panas-panas begini enaknya minum es ya`,'Nilai bukanlah segalanya, jangan terlalu dipikirkan!'],
+      female :[`Istrirahat dulu kalau capek`, `Kalau capek bisa tidur dipangkuanku`, `Jangan lupa makan siang ya :)`,'Nilai bukanlah segalanya, jangan terlalu dipikirkan!'],
   };
   } else if ( hour >= 15 && hour <=18){
     return{
       time : 'Afternoon',
       pic : ['https://media1.tenor.com/m/pmY6lnm0ZjIAAAAC/good-morning.gif', 'https://media1.tenor.com/m/wGLyKHJv5lIAAAAC/fsdd.gif', 'https://media1.tenor.com/m/3eGagZJGpyIAAAAC/good-morning.gif', 'https://media1.tenor.com/m/rxVs-oSYohcAAAAC/morning-morning-sunshine.gif', 'https://media1.tenor.com/m/v4O7i-ox1dAAAAAC/happy-valentines-day-2024-happy-valentine%27s-day-2024.gif' ],
-      male : [`Info Senja`, `No ingpo`, `Lelah`],
-      female :[`Kalau Capek Istirahat ya`, `Tetap Semangat ya`, `Lebih enak lihat senja atau melihat paras cantikmu?`],
+      male : [`Jangan lupa lihat jadwal yaa`, `Apa kamu sudah merasa jadi Main Character hari ini?`, `Jadilah pria SIGMA`],
+      female :[`Kalau Capek Istirahat ya`, `Apakah hari mu menyenangkan?`, `Lebih enak lihat senja atau melihat paras cantikmu?`],
   };
   } else {
     return{
       time : 'Night',
       pic : ['https://media1.tenor.com/m/pmY6lnm0ZjIAAAAC/good-morning.gif', 'https://media1.tenor.com/m/wGLyKHJv5lIAAAAC/fsdd.gif', 'https://media1.tenor.com/m/3eGagZJGpyIAAAAC/good-morning.gif', 'https://media1.tenor.com/m/rxVs-oSYohcAAAAC/morning-morning-sunshine.gif', 'https://media1.tenor.com/m/v4O7i-ox1dAAAAAC/happy-valentines-day-2024-happy-valentine%27s-day-2024.gif' ],
-      male : [`Kerja Kerja`, `Bergadang Jangan Bergadang`, `Info Ngopi`],
-      female :[`Kalau capek istirahat ya`, `Jangan tidur malem-malem`, `Mau aku nyanyikan lagu pengantar tidur?`],
+      male : [`Lanjut besok aja!`, `Jangan Begadang`, `Info Ngopi rek!`],
+      female :[`Kamu kok belum tidur? nanti sakit loh`, `Jangan tidur malem-malem`, `Mau aku nyanyikan lagu pengantar tidur?`],
   };
 }}
