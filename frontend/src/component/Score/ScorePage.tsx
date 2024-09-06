@@ -3,7 +3,6 @@ import Score from "./Aslab/Score";
 import PraktikanScore from "./Praktikan/Score";
 
 const ScorePage = () => {
-    document.title = 'Scores'
     const{authUser} = useAuthContext();
 
     return (
