@@ -16,7 +16,7 @@ const AllUsers = () => {
 
   if(isLoading || !users) return <Loading/>
   
-  let usersFilter = users;
+  let usersFilter = users.filter((val => val.fullname !== `test`));
   const role = ['Praktikan', "Aslab", "Admin", "Manipulator"]
   if(search?.length !==0) usersFilter = usersFilter.filter(val => val.nrp.includes(search)|| val.fullname.toLowerCase().includes(search.toLowerCase()))
 
