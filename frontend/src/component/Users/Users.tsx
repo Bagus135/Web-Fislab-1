@@ -38,7 +38,7 @@ const AllUsers = () => {
         className="flex border items-center p-4 bg-white rounded shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-500 hover:scale-95 transition duration-500 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080]">
 
           <div className="flex flex-shrink-0 items-center justify-center h-20 w-20 rounded">
-          <img src={!val.profilPic ? "/user.png" : val.profilPic} alt="" className="w-20 h-20 mx-auto rounded-xl dark:bg-gray-500 aspect-square" />
+          <img src={`https://ui-avatars.com/api/?name=${val.fullname}`} alt="Avatar" className="w-20 h-20 mx-auto rounded-md dark:bg-gray-500 aspect-square" />
           </div>
           <div className="flex-grow flex flex-col ml-4">
               <div className="flex items-center justify-between">

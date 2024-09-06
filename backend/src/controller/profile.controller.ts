@@ -14,7 +14,6 @@ export const getAllUser = async (req : Request, res : Response) =>{
                 gender: true,
                 role: true,
                 title: true, 
-                profilPic: true,
             }
         });
 
@@ -125,11 +124,11 @@ export const editUserProfile = async (req : Request, res : Response) =>{
 
 export const getJudulAslab = async(req : Request, res : Response) =>{
     try{
-    const {uid : idAslab} = req.params
+    const {uid : idJudulAslab} = req.params
 
-    const getJudulAslab = await prisma.judulAslab.findMany({
+    const getJudulAslab = await prisma.judulAslab.findUnique({
        where : {
-        idAslab : idAslab
+        id : idJudulAslab
        }
     })
 

@@ -125,7 +125,6 @@ interface AllUsers {
     gender : string 
     id : string 
     nrp : string;
-    profilPic : string|null;
     role : number
     title : string[]
 }
@@ -254,4 +253,13 @@ interface AnnounceTypeRes {
     judul: string;
     createdAt: Date;
     creatorName: string;
+}
+
+interface getJudulAslabRes {
+    id: string;
+    idAslab: string;
+    kodeJudul: string;
+    noJudul: number;
+    judul: string;
+    Aslab: string;
 }

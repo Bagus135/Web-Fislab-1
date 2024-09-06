@@ -57,7 +57,7 @@ const StatCard = () => {
             :
             <>
             <div className="bg-gray-300 flex flex-shrink-0 items-center  font-bold justify-center h-12 w-10 rounded md:text-xl dark:bg-[#ffa31a] dark:text-black">
-                {!rerataNilai?  '-' : rerataNilai }
+                {!rerataNilai?  '-' : rerataNilai.toFixed(2) }
             </div>
                 <div className="flex-grow flex flex-col ml-4 ">
                     <span className="text-sm md:text-xl font-bold top-0 pt-0 dark:text-[#ffa31a]">Nilai Rerata</span>

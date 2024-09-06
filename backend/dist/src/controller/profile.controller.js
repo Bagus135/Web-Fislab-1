@@ -12,7 +12,6 @@ export const getAllUser = async (req, res) => {
                 gender: true,
                 role: true,
                 title: true,
-                profilPic: true,
             }
         });
         res.status(200).json({
@@ -117,10 +116,10 @@ export const editUserProfile = async (req, res) => {
 };
 export const getJudulAslab = async (req, res) => {
     try {
-        const { uid: idAslab } = req.params;
-        const getJudulAslab = await prisma.judulAslab.findMany({
+        const { uid: idJudulAslab } = req.params;
+        const getJudulAslab = await prisma.judulAslab.findUnique({
             where: {
-                idAslab: idAslab
+                id : idJudulAslab
             }
         });
         if (!getJudulAslab) {
