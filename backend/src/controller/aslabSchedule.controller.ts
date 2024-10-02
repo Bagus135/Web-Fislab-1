@@ -65,7 +65,7 @@ export const checkQuotaSchedule = async (req:Request, res:Response, next : NextF
         })
         console.log(getMaxSchedule.length);
         
-        if(getMaxSchedule.length > 3){
+        if(getMaxSchedule.length > 1){
             return res.status(403).json({error : "Forbidden - The schedule is full at this time"})
         }
 

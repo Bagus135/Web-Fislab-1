@@ -11,7 +11,7 @@ interface InputScore{
     Pembahasan: number;
     Kesimpulan: number;
     Format: number;
-    comment: string | undefined;
+    comment: string|null;
 }
 
 const useEditScore = () => {

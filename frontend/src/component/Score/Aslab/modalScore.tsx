@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import useEditScore from "./useEditScore";
 import toast from "react-hot-toast";
 
@@ -71,44 +71,63 @@ interface InputComponentProps{
 }
 
 interface InputScore{
-    PreLab :string|undefined;
-    InLab :string|undefined ;
-    Abstrak :string|undefined ;
-    Pendahuluan :string|undefined ;
-    Metodologi :string|undefined ;
-    Pembahasan :string|undefined ;
-    Kesimpulan :string|undefined ;
-    Format :string|undefined ; 
-    comment : string|undefined;
+    PreLab :string|null;
+    InLab :string|null ;
+    Abstrak :string|null ;
+    Pendahuluan :string|null ;
+    Metodologi :string|null ;
+    Pembahasan :string|null ;
+    Kesimpulan :string|null ;
+    Format :string|null ; 
+    comment : string|null;
 }
 
 export const ModalInputScore = ({detailScore, id, trigger, setTrigger}:{detailScore : aslabScoringDetails, id:string, trigger:boolean, setTrigger : (trigger : boolean)=> void}) => {
-    
+     
     const [value, setValue] = useState<InputScore>({
-        PreLab :undefined,        
-        InLab :undefined,
-        Abstrak :undefined,
-        Pendahuluan :undefined,
-        Metodologi :undefined,
-        Pembahasan :undefined,
-        Kesimpulan :undefined,
-        Format :undefined, 
-        comment : undefined,
+        PreLab :null,        
+        InLab :null,
+        Abstrak :null,
+        Pendahuluan :null,
+        Metodologi :null,
+        Pembahasan :null,
+        Kesimpulan :null,
+        Format :null, 
+        comment : null,
 })
+const {editScore,isLoading} = useEditScore()
 
-    const {editScore,isLoading} = useEditScore()
-    if(!detailScore) return (
-        <dialog id={id} className="modal w-screen ">
+useEffect(()=>{
+  if(detailScore){
+   setValue ({
+     PreLab :!detailScore.PreLab? null : String(detailScore.PreLab),        
+     InLab :!detailScore.InLab? null : String(detailScore.InLab) ,
+     Abstrak :!detailScore.Abstrak? null : String(detailScore.Abstrak),
+     Pendahuluan :!detailScore.Pendahuluan? null : String(detailScore.Pendahuluan),
+     Metodologi :!detailScore.Metodologi? null : String(detailScore.Metodologi),
+     Pembahasan :!detailScore.Pembahasan? null : String(detailScore.Pembahasan),
+     Kesimpulan :!detailScore.Kesimpulan? null : String(detailScore.Kesimpulan),
+     Format :!detailScore.Format? null : String(detailScore.Format), 
+     comment : !detailScore.comment? null : detailScore.comment,
+   });
+  }
+},[detailScore])
+
+if(!detailScore) return (
+  <dialog id={id} className="modal w-screen ">
             <div className="modal-box"></div>
             <form method="dialog" className="modal-backdrop">
                 <button>close</button>
             </form>
         </dialog>  
     )
+
+
+    const nilaiTot = (Number(value.PreLab) + Number(value.InLab) + Number(value.Abstrak) + Number(value.Pendahuluan) + Number(value.Metodologi) + Number(value.Pembahasan) + Number(value.Kesimpulan) + Number(value.Format))
     const handleSubmit = async (e : React.FormEvent) => {
         e.preventDefault();
         
-        if(value.PreLab === undefined|| value.InLab === undefined || value.Abstrak === undefined || value.Pendahuluan ===  undefined|| value.Metodologi ===  undefined|| value.Pembahasan ===undefined|| value.Kesimpulan=== undefined|| value.Format === undefined){
+        if(value.PreLab === null|| value.InLab === null || value.Abstrak === null || value.Pendahuluan ===  null|| value.Metodologi ===  null|| value.Pembahasan ===null|| value.Kesimpulan=== null|| value.Format === null){
           return toast.error(`Please fill all fields`)
         }
 
@@ -138,48 +157,51 @@ export const ModalInputScore = ({detailScore, id, trigger, setTrigger}:{detailSc
         <h3 className="font-bold text-2xl pb-5 text-center">Input Score</h3>
     <div className="flex flex-col">
             <InputComponent title="Pre Lab" placeholder="0-30" type="number" 
-                            value={value.PreLab} 
+                            value={value.PreLab!} 
                             setValue={(e)=> setValue({...value, PreLab : e.target.value })}/>
             
             <InputComponent title="In Lab" placeholder="0-10" type="number" 
-                            value={value.InLab} 
+                            value={value.InLab!} 
                             setValue={(e)=> setValue({...value, InLab : e.target.value })}/>
             
             <InputComponent title="Abstrak" placeholder="0-5" type="number" 
-                            value={value.Abstrak} 
+                            value={value.Abstrak!} 
                             setValue={(e)=> setValue({...value, Abstrak : e.target.value })}/>
             
             <InputComponent title="Pendahuluan" placeholder="0-10" type="number" 
-                            value={value.Pendahuluan} 
+                            value={value.Pendahuluan!} 
                             setValue={(e)=> setValue({...value, Pendahuluan : e.target.value })}/>
             
             <InputComponent title="Metodologi" placeholder="0-5" type="number" 
-                            value={value.Metodologi} 
+                            value={value.Metodologi!} 
                             setValue={(e)=> setValue({...value, Metodologi : e.target.value })}/>
             
             <InputComponent title="Pembahasan" placeholder="0-30" type="number" 
-                            value={value.Pembahasan} 
+                            value={value.Pembahasan!} 
                             setValue={(e)=> setValue({...value, Pembahasan : e.target.value })}/>
             
             <InputComponent title="Kesimpulan" placeholder="0-5" type="number" 
-                            value={value.Kesimpulan} 
+                            value={value.Kesimpulan!} 
                             setValue={(e)=> setValue({...value, Kesimpulan : e.target.value })}/>
            
             <InputComponent title="Format" placeholder="0-5" type="number" 
-                            value={value.Format} 
+                            value={value.Format!} 
                             setValue={(e)=> setValue({...value, Format : e.target.value })}/>
                             
             <div className="pb-2">
                 <label className="block mb-2 text-sm font-medium text-[#111827] dark:text-white">Comment</label>
                 <div className="relative text-gray-400">
-                    <input type='text'
-                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 h-20 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]" 
+                    <textarea 
+                            className="pl-2 mb-2 bg-gray-50 text-gray-600 border focus:border-transparent border-gray-300 sm:text-sm rounded-lg text-justify ring ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 block w-full p-2.5 rounded-l-lg py-3 px-4 h-20 dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] dark:text-[#ffa31a]" 
                             placeholder='Kerja Bagus!!'
-                            value={value.comment}
-                            onChange={(e)=> setValue({...value, comment : e.target.value })}/>
+                            value={value.comment!}
+                            onChange={(e)=> setValue({...value, comment : e.target.value })}></textarea>
                 </div>
             </div>
-
+            
+            <div className="text-right">
+              Score : {nilaiTot}
+            </div>
             <button type="button" 
                     onClick={handleSubmit}
                     className={`w-full text-[#FFFFFF] bg-[rgb(6,6,6)] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6  dark:bg-[#ffa31a] mt-5 dark:text-black ${isLoading? "btn btn-disabled" : ''}`}

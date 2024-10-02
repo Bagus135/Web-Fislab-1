@@ -43,28 +43,28 @@ const greetTime = () =>{
     return{
         time : 'Morning',
         pic : ['https://media1.tenor.com/m/pmY6lnm0ZjIAAAAC/good-morning.gif', 'https://media1.tenor.com/m/wGLyKHJv5lIAAAAC/fsdd.gif', 'https://media1.tenor.com/m/rxVs-oSYohcAAAAC/morning-morning-sunshine.gif', 'https://media1.tenor.com/m/v4O7i-ox1dAAAAAC/happy-valentines-day-2024-happy-valentine%27s-day-2024.gif' ],
-        male : [`Semangat Mas Bro`, `Olahraga bro, kesehatan juga penting`, `Luangkan waktu untuk mewing🤫`],
-        female :[`Apakah mimpimu tadi indah?`, `Semangat jalani hari😊`, `Jangan Lupa Sarapan Ya! Nanti Sakit loh:)`],
+        male : [`Semangat Mas Bro`, `Olahraga bro, kesehatan juga penting`, `Luangkan waktu untuk mewing🤫`,'Apakah pagi ini kamu merasa bersemangat','Utamakan pagi harimu dengan sarapan, bukan harapan'],
+        female :[`Apakah mimpimu tadi indah?`, `Semangat jalani hari😊`, `Jangan Lupa Sarapan Ya! Nanti Sakit loh:)`,'Apakah pagi ini kamu merasa bersemangat','Utamakan pagi harimu dengan sarapan, bukan harapan'],
     };
   } else if (hour >=9 && hour <= 14){
     return{
       time : 'Day',
       pic : ['https://media1.tenor.com/m/2gyy4BcsLWsAAAAd/monkey-confused.gif', 'https://media.tenor.com/o-nQPK7DpVkAAAAi/nice-day-nice-day-quotes.gif', 'https://media1.tenor.com/m/XnKB_aFAzJMAAAAC/alumae-alumaeyy.gif', 'https://media1.tenor.com/m/xATuBt2dRhwAAAAC/kitten-cat.gif', 'https://media1.tenor.com/m/x99PnBgNRVYAAAAC/halo-halo-halo-halo-delight.gif', 'https://media1.tenor.com/m/_i6Lp7mnRLYAAAAC/scenery.gif' ],
-      male : [`Istirahat Dulu Bang`, `Nothing last forever we can change the future`, `Panas-panas begini enaknya minum es ya`,'Nilai bukanlah segalanya, jangan terlalu dipikirkan!'],
-      female :[`Istrirahat dulu kalau capek`, `Kalau capek bisa tidur dipangkuanku`, `Jangan lupa makan siang ya :)`,'Nilai bukanlah segalanya, jangan terlalu dipikirkan!'],
+      male : [`Istirahat Dulu Bang`, `Nothing last forever we can change the future`, `Panas-panas begini enaknya minum es ya`,'Nilai bukanlah segalanya, jangan terlalu dipikirkan!','Aku bukan peramal, tapi aku tebak kamu sekarang pasti merasa bahagia','Aku butuh medkit!!!'],
+      female :[`Istrirahat dulu kalau capek`, `Kalau capek bisa tidur dipangkuanku`, `Jangan lupa makan siang ya :)`,'Nilai bukanlah segalanya, jangan terlalu dipikirkan!','Aku bukan peramal, tapi aku tebak kamu sekarang pasti merasa bahagia','Fisika itu menyenangkan, bukan? '],
   };
   } else if ( hour >= 15 && hour <=18){
     return{
       time : 'Afternoon',
       pic : ['https://media1.tenor.com/m/i5TRPkSTPrwAAAAC/chenongyun-cat.gif', 'https://media1.tenor.com/m/eH5Is1xMI3kAAAAC/good-afternoon-flowers.gif', 'https://media1.tenor.com/m/i17hE_5vblMAAAAC/dusk.gif', 'https://media1.tenor.com/m/ns27oDL6PPIAAAAC/cats-cat-with-flower.gif', 'https://media1.tenor.com/m/6doI8gWXn5cAAAAC/sunset-beach.gif' ],
-      male : [`Jangan lupa lihat jadwal yaa`, `Apa kamu sudah merasa jadi Main Character hari ini?`, `Jadilah pria SIGMA`],
-      female :[`Kalau Capek Istirahat ya`, `Apakah hari mu menyenangkan?`, `Lebih enak lihat senja atau melihat paras cantikmu?`],
+      male : [`Jangan lupa lihat jadwal yaa`, `Apakah kamu sudah merasa menjadi Main Character hari ini?`, `Jadilah pria SIGMA`,'Air tenang, menghanyutkan'],
+      female :[`Kalau Capek Istirahat ya`, `Apakah hari mu menyenangkan?`, `Lebih enak lihat senja atau melihat paras cantikmu?`,'Lelah dengan hari ini? senyumin ajaa....'],
   };
   } else {
     return{
       time : 'Night',
       pic : ['https://media1.tenor.com/m/vPr1E0fcHb4AAAAC/rain-anime.gif', 'https://media1.tenor.com/m/3vPe_Ywi0ZYAAAAd/good-night-moon.gif', 'https://media.tenor.com/5XS8fR02lnYAAAAi/sleep-nitez.gif', 'https://media1.tenor.com/m/beui1xgck_4AAAAC/hot-menyala.gif', 'https://media1.tenor.com/m/JChxs-yyayQAAAAC/cozy-aesthetic.gif', 'https://media1.tenor.com/m/7dGpAI5sKzwAAAAd/kimi-no-na-wa-anime.gif'],
-      male : [`Lanjut besok aja!`, `Jangan Begadang`, `Info Ngopi rek!`],
-      female :[`Kamu kok belum tidur? nanti sakit loh`, `Jangan tidur malem-malem`, `Mau aku nyanyikan lagu pengantar tidur?`],
+      male : [`Lanjut besok aja!`, `Jangan Begadang`, `Info Ngopi rek!`,'Hal yang berat, akan ringan jika dikerjakan bersama-sama','Pria tidak bercerita'],
+      female :[`Kamu kok belum tidur? nanti sakit loh`, `Jangan tidur malem-malem`, `Mau aku nyanyikan lagu pengantar tidur?`,'Hal yang berat, akan ringan jika dikerjakan bersama-sama','Asik, Salting, Asing'],
   };
 }}
