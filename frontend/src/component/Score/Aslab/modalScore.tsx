@@ -100,17 +100,17 @@ const {editScore,isLoading} = useEditScore()
 useEffect(()=>{
   if(detailScore){
    setValue ({
-     PreLab :!detailScore.PreLab? null : String(detailScore.PreLab),        
-     InLab :!detailScore.InLab? null : String(detailScore.InLab) ,
-     Abstrak :!detailScore.Abstrak? null : String(detailScore.Abstrak),
-     Pendahuluan :!detailScore.Pendahuluan? null : String(detailScore.Pendahuluan),
-     Metodologi :!detailScore.Metodologi? null : String(detailScore.Metodologi),
-     Pembahasan :!detailScore.Pembahasan? null : String(detailScore.Pembahasan),
-     Kesimpulan :!detailScore.Kesimpulan? null : String(detailScore.Kesimpulan),
-     Format :!detailScore.Format? null : String(detailScore.Format), 
-     comment : !detailScore.comment? null : detailScore.comment,
+     PreLab :!detailScore.PreLab? '' : String(detailScore.PreLab),        
+     InLab :!detailScore.InLab? '' : String(detailScore.InLab) ,
+     Abstrak :!detailScore.Abstrak? '' : String(detailScore.Abstrak),
+     Pendahuluan :!detailScore.Pendahuluan? '' : String(detailScore.Pendahuluan),
+     Metodologi :!detailScore.Metodologi? '' : String(detailScore.Metodologi),
+     Pembahasan :!detailScore.Pembahasan? '' : String(detailScore.Pembahasan),
+     Kesimpulan :!detailScore.Kesimpulan? '' : String(detailScore.Kesimpulan),
+     Format :!detailScore.Format? '' : String(detailScore.Format), 
+     comment : !detailScore.comment? '' : detailScore.comment,
    });
-  }
+}
 },[detailScore])
 
 if(!detailScore) return (
@@ -127,7 +127,7 @@ if(!detailScore) return (
     const handleSubmit = async (e : React.FormEvent) => {
         e.preventDefault();
         
-        if(value.PreLab === null|| value.InLab === null || value.Abstrak === null || value.Pendahuluan ===  null|| value.Metodologi ===  null|| value.Pembahasan ===null|| value.Kesimpulan=== null|| value.Format === null){
+        if(value.PreLab === ''|| value.InLab === '' || value.Abstrak === '' || value.Pendahuluan ===  ''|| value.Metodologi ===  ''|| value.Pembahasan ===''|| value.Kesimpulan=== ''|| value.Format === ''){
           return toast.error(`Please fill all fields`)
         }
 
@@ -215,19 +215,18 @@ if(!detailScore) return (
 )}
 
 const ChangeTypeNumber = (a : InputScore)=>{
- return {
-    PreLab :Number(a.PreLab),        
-    InLab :Number(a.InLab),
-    Abstrak :Number(a.Abstrak),
-    Pendahuluan :Number(a.Pendahuluan),
-    Metodologi :Number(a.Metodologi),
-    Pembahasan :Number(a.Pembahasan),
-    Kesimpulan :Number(a.Kesimpulan),
-    Format :Number(a.Format), 
-    comment : a.comment,
- }
-}
-
+ 
+   return {
+     PreLab :Number(a.PreLab),        
+     InLab :Number(a.InLab),
+     Abstrak :Number(a.Abstrak),
+     Pendahuluan :Number(a.Pendahuluan),
+     Metodologi :Number(a.Metodologi),
+     Pembahasan :Number(a.Pembahasan),
+     Kesimpulan :Number(a.Kesimpulan),
+     Format :Number(a.Format), 
+     comment : a.comment,
+ }}
 
 const InputComponent = ({title, type, placeholder, value, setValue} : InputComponentProps) =>{
      return (
