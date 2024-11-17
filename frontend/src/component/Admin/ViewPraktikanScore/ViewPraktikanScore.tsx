@@ -16,23 +16,31 @@ const ViewPraktikanScore = () => {
     if(isLoading) return <Loading/>
     if(!dataScores) return null
     
-   const dataScoresMap= dataScores.map((val , idx)=>{
-        let nilaiTotal : number|null = null
+    dataScores.map((val , idx)=>{
+        let nilaiTotal : number|null = null;
+        let n : number|null= null;
         let nama = '';
-        let nrp = '';
-        let n : number|null= null
+        let nrp ='';
         let nilaiRataRata : number|null = null;
         [...Array(10)].map((_,idx2)=>{
             const dataMap = val[`praktikum${idx2+1}`] as getViewPraktikumAdminRes
-            if(!dataMap) return
             nama = dataMap.name
             nrp = dataMap.nrp
+            if(!dataMap) return
             if(!dataMap.nilaiTotal) return 
             nilaiTotal = nilaiTotal! + Number(dataMap.nilaiTotal)
             n = n!+1
-        })
+        }) 
         
         if(n||nilaiTotal) nilaiRataRata = nilaiTotal!/n!
+        val.nilaiRataRata = nilaiRataRata!
+        val.nrp = nrp
+        val.nama = nama
+    })
+    
+    dataScores.sort((a,b)=>{return b.nilaiRataRata - a.nilaiRataRata})
+
+const dataScoresMap = dataScores.map((val,idx) => {
         return (
             <div className="rounded-md w-full shadow-[1px_2px_2px_2px_rgba(0,0,0,0,1)] shadow-gray-300  flex flex-row items-center border border-black gap-4 p-2 text-center  dark:bg-[#1b1b1b] dark:shadow-[#292929] dark:border-[#808080] " key={idx}>
                 <div className="w-[25%]" 
@@ -40,34 +48,22 @@ const ViewPraktikanScore = () => {
                 getProfile(val.userID);
                 (document.getElementById('ModalProfile') as HTMLDialogElement).showModal()!
                 }} >
-                    {nama}
+                    {val.nama}
                 </div>
-                <div className="w-[25%]">{nrp}</div>
+                <div className="w-[25%]">{val.nrp}</div>
                 <div className="w-[25%]">Kelompok-{val.kelompokid}</div>
-                <div className="w-[25%] dark:text-[#ffa31a]">{nilaiRataRata}</div>
+                <div className="w-[25%] dark:text-[#ffa31a]">{!val.nilaiRataRata||val.nilaiRataRata.toFixed(3)}</div>
             </div>
         )
     })
-
-    const dataSyncScore= dataScores.map((val)=>{
-        let nilaiTotal : number|null = null
-        let nama = '';
-        let nrp = '';
-        let n : number|null= null
-        let nilaiRataRata : number|null = null;
-        [...Array(10)].map((_,idx2)=>{
-            const dataMap = val[`praktikum${idx2+1}`] as getViewPraktikumAdminRes
-            if(!dataMap) return
-            nama = dataMap.name
-            nrp = dataMap.nrp
-            if(!dataMap.nilaiTotal) return 
-            
-            nilaiTotal = nilaiTotal! + Number(dataMap.nilaiTotal)
-            n = n!+1
-        })
-        if(n||nilaiTotal) nilaiRataRata = nilaiTotal!/n!
-        return {uid : val.userID, nrp : nrp, noKel : val.kelompokid, totalScore : nilaiRataRata, name : nama}
-    })
+    dataScores.sort((a,b)=>{return a.nrp - b.nrp})
+    
+    const SyncScore= dataScores.map((val)=>{
+      if(val.nama !== 'test'){ 
+        return {uid : val.userID, nrp : val.nrp, noKel : val.kelompokid, totalScore : val.nilaiRataRata, name : val.nama}
+    }
+})
+    const dataSyncScore = SyncScore.filter(val => val !== undefined)
 
 
     return (    
