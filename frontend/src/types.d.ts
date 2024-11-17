@@ -231,8 +231,8 @@ interface getViewPraktikumAdminRes{
 }
 
 interface getViewScoreAdmin{
-    nama: string;
-    nrp: string;
+    nama: any;
+    nrp: any;
     userID: string;
     kelompokid: number;
     nilaiRataRata : number;

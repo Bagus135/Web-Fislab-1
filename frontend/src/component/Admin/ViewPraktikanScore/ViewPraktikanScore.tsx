@@ -16,7 +16,7 @@ const ViewPraktikanScore = () => {
     if(isLoading) return <Loading/>
     if(!dataScores) return null
     
-    dataScores.map((val , idx)=>{
+    dataScores.map((val)=>{
         let nilaiTotal : number|null = null;
         let n : number|null= null;
         let nama = '';
