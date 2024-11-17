@@ -56,7 +56,7 @@ const dataScoresMap = dataScores.map((val,idx) => {
             </div>
         )
     })
-    dataScores.sort((a,b)=>{return a.nrp - b.nrp})
+    dataScores.sort((a,b)=>{return a.nrp  - b.nrp})
     
     const SyncScore= dataScores.map((val)=>{
       if(val.nama !== 'test'){ 
