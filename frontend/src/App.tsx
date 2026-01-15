@@ -20,6 +20,7 @@ import ShortlinkPage from "./component/ShortLink/ShortlinkPage";
 import Profile from "./component/Profile/Profile";
 import ViewPraktikanScore from "./component/Admin/ViewPraktikanScore/ViewPraktikanScore";
 import Announcement from "./component/Announcement/Announcement";
+import AdminSignUp from "./component/Auth/SignUp/adminSignUp";
 
 
 function App(){
@@ -36,6 +37,7 @@ function App(){
         <Route path="/" element = { !authUser? <Navigate to={'/login'}/> : <Navigate to={'/dashboard'}/> } />
         <Route path="/login" element = { !authUser? <Login/> : <Navigate to={'/dashboard'}/>} />
         <Route path="/dashboard" element = { authUser? <Dashboard/> : <Navigate to={'/login'}/>} />
+        <Route path="/signup/admin" element = {<AdminSignUp/>} />
         <Route path="/signup" element = { !authUser? <Navigate to={'/login'}/> : (authUser.role > 2 ? <SignUp/> : <NotAuth pageName="Sign Up"/> ) } />
         <Route path="/announcement" element = { !authUser? <Navigate to={'/login'}/> : <Announcement/>} />
         <Route path="/score" element = { !authUser? <Navigate to={'/login'}/> : <ScorePage/> } />

@@ -53,6 +53,14 @@ interface SignUpInputs {
     confirmPassword : string;
     gender : string
 }
+interface AdminSignUpInputs {
+    nrp: string;
+    fullname: string;
+    password : string;
+    confirmPassword : string;
+    gender : string;
+    signature : string;
+}
 
 interface PraktikanScore {
     userID : string;
